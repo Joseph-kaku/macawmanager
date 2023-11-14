@@ -1,0 +1,56 @@
+[
+    {
+    "name": "John Smith",
+    "title": "CEO and Project Lead",
+    "email": "john.smith@acmetech.com",
+    "phone": "+1-212-555-1212",
+    "department": "Engineering",
+    "projects": [
+        "Web Application Development for E-commerce Platform",
+        "Mobile Application Development for Fitness Tracking"
+    ]
+    },
+    {
+    "name": "Jane Doe",
+    "title": "CTO and Project Manager",
+    "email": "jane.doe@acmetech.com",
+    "phone": "+1-646-555-1212",
+    "department": "Management",
+    "projects": [
+        "Machine Learning Model for Fraud Detection",
+        "Data Analytics Dashboard for Business Intelligence"
+    ]
+    },
+    {
+    "name": "Peter Jones",
+    "title": "Senior Software Engineer",
+    "email": "peter.jones@acmetech.com",
+    "phone": "+1-310-555-1212",
+    "department": "Engineering",
+    "projects": [
+        "Web Application Development for E-commerce Platform",
+        "Mobile Application Development for Fitness Tracking",
+        "Machine Learning Model for Fraud Detection"
+    ]
+    },
+    {
+    "name": "Mary Smith",
+    "title": "IoT Specialist",
+    "email": "mary.smith@acmetech.com",
+    "phone": "+1-415-555-1212",
+    "department": "Engineering",
+    "projects": [
+        "Internet of Things (IoT) System for Smart Home Automation"
+    ]
+    },
+    {
+    "name": "David Lee",
+    "title": "Data Analyst",
+    "email": "david.lee@acmetech.com",
+    "phone": "+1-503-555-1212",
+    "department": "Data Science",
+    "projects": [
+        "Data Analytics Dashboard for Business Intelligence"
+    ]
+    }
+]

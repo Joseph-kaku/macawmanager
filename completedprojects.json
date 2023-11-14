@@ -1,0 +1,38 @@
+[
+    {
+    "projectName": "Web Application Development for E-commerce Platform",
+    "projectDescription": "Design and develop a user-friendly e-commerce platform with advanced features and functionalities.",
+    "technologies": [
+        "ReactJS",
+        "Node.js",
+        "MongoDB",
+        "Express.js"
+    ],
+    "completionDate": "2023-10-04",
+    "projectManager": "Jane Doe"
+    },
+    {
+    "projectName": "Mobile Application Development for Fitness Tracking",
+    "projectDescription": "Create a mobile app that tracks users' fitness activities, provides personalized workout plans, and offers real-time feedback.",
+    "technologies": [
+        "Flutter",
+        "Google Cloud Platform",
+        "Firebase",
+        "HealthKit"
+    ],
+    "completionDate": "2023-09-21",
+    "projectManager": "John Smith"
+    },
+    {
+    "projectName": "Data Analytics Dashboard for Business Intelligence",
+    "projectDescription": "Develop a data analytics dashboard that visualizes and analyzes business data to gain insights and make informed decisions.",
+    "technologies": [
+        "Power BI",
+        "Tableau",
+        "SQL Server",
+        "Data Warehouse"
+    ],
+    "completionDate": "2023-11-10",
+    "projectManager": "David Lee"
+    }
+]
