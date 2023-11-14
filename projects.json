@@ -1,0 +1,62 @@
+[
+    {
+    "projectName": "Web Application Development for E-commerce Platform",
+    "company": "IntelliTech Solutions",
+    "projectDescription": "Design and develop a user-friendly e-commerce platform with advanced features and functionalities.",
+    "technologies": [
+        "ReactJS",
+        "Node.js",
+        "MongoDB",
+        "Express.js"
+    ],
+    "projectStatus": "In Progress"
+    },
+    {
+    "projectName": "Mobile Application Development for Fitness Tracking",
+    "company": "Innovate Fitness",
+    "projectDescription": "Create a mobile app that tracks users' fitness activities, provides personalized workout plans, and offers real-time feedback.",
+    "technologies": [
+        "Flutter",
+        "Google Cloud Platform",
+        "Firebase",
+        "HealthKit"
+    ],
+    "projectStatus": "Completed"
+    },
+    {
+    "projectName": "Machine Learning Model for Fraud Detection",
+    "company": "DataShield Solutions",
+    "projectDescription": "Develop a machine learning model that analyzes financial transactions to identify and prevent fraudulent activities.",
+    "technologies": [
+        "Python",
+        "TensorFlow",
+        "Scikit-learn",
+        "Apache Spark"
+    ],
+    "projectStatus": "Completed"
+    },
+    {
+    "projectName": "Internet of Things (IoT) System for Smart Home Automation",
+    "company": "SmartHome Technologies",
+    "projectDescription": "Design and implement an IoT system that connects and manages smart home devices, enabling remote control and automation.",
+    "technologies": [
+        "Arduino",
+        "Raspberry Pi",
+        "MQTT Protocol",
+        "Node-RED"
+    ],
+    "projectStatus": "In Progress"
+    },
+    {
+    "projectName": "Data Analytics Dashboard for Business Intelligence",
+    "company": "Decision Analytics",
+    "projectDescription": "Develop a data analytics dashboard that visualizes and analyzes business data to gain insights and make informed decisions.",
+    "technologies": [
+        "Power BI",
+        "Tableau",
+        "SQL Server",
+        "Data Warehouse"
+    ],
+    "projectStatus": "Completed"
+    }
+]
