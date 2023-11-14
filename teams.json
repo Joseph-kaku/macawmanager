@@ -1,0 +1,77 @@
+[
+    {
+    "projectName": "Web Application Development for E-commerce Platform",
+    "developers": [
+        {
+        "name": "John Smith",
+        "title": "Software Engineer",
+        "skills": ["ReactJS", "Node.js", "MongoDB", "Express.js"]
+        },
+        {
+        "name": "Jane Doe",
+        "title": "Front-end Developer",
+        "skills": ["ReactJS", "HTML", "CSS"]
+        }
+    ]
+    },
+    {
+    "projectName": "Mobile Application Development for Fitness Tracking",
+    "developers": [
+        {
+        "name": "Jane Doe",
+        "title": "Mobile Developer",
+        "skills": ["Flutter", "Google Cloud Platform", "Firebase", "HealthKit"]
+        },
+        {
+        "name": "Peter Jones",
+        "title": "Backend Developer",
+        "skills": ["Python", "Flask", "SQLAlchemy"]
+        }
+    ]
+    },
+    {
+    "projectName": "Machine Learning Model for Fraud Detection",
+    "developers": [
+        {
+        "name": "Peter Jones",
+        "title": "Machine Learning Engineer",
+        "skills": ["Python", "TensorFlow", "Scikit-learn", "Apache Spark"]
+        },
+        {
+        "name": "David Lee",
+        "title": "Data Analyst",
+        "skills": ["Power BI", "Tableau", "SQL Server", "Data Warehouse"]
+        }
+    ]
+    },
+    {
+    "projectName": "Internet of Things (IoT) System for Smart Home Automation",
+    "developers": [
+        {
+        "name": "Mary Smith",
+        "title": "IoT Developer",
+        "skills": ["Arduino", "Raspberry Pi", "MQTT Protocol", "Node-RED"]
+        },
+        {
+        "name": "John Smith",
+        "title": "Software Engineer",
+        "skills": ["ReactJS", "Node.js", "MongoDB", "Express.js"]
+        }
+    ]
+    },
+    {
+    "projectName": "Data Analytics Dashboard for Business Intelligence",
+    "developers": [
+        {
+        "name": "David Lee",
+        "title": "Data Analyst",
+        "skills": ["Power BI", "Tableau", "SQL Server", "Data Warehouse"]
+        },
+        {
+        "name": "Jane Doe",
+        "title": "Front-end Developer",
+        "skills": ["ReactJS", "HTML", "CSS"]
+        }
+    ]
+    }
+]
