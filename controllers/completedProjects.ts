@@ -19,6 +19,7 @@
 
 import { Request, Response } from 'express';
 import db from '../db';
+const ObjectId = require('mongodb').ObjectId;
 const CompletedProjects = db.completedProjects;
 
 export const create = (req: Request, res: Response): void => {
@@ -65,12 +66,12 @@ export const getAll = (req: Request, res: Response): void => {
 
 export const getCompletedProject = (req: Request, res: Response): void => {
   try {
-    const projectName = req.params.projectName;
+    const completedProjectId = new ObjectId(req.params.completedProjectId);
     
-     CompletedProjects.find({ projectName })
+     CompletedProjects.find({ completedProjectId })
        .then((data: object) => {
         
-        if(Object.keys(projectName).length==0){
+        if(Object.keys(completedProjectId).length==0){
           console.log("no project found");
           res.status(404).send({ message: 'Project not found' });
           return

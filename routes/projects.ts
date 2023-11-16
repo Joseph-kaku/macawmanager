@@ -16,3 +16,16 @@
 // | of us learn. Thanks, - Ryker.                                                  |
 // |                                                                                |
 // \-------------------------------------------------------------------------------*/
+
+
+import express from 'express';
+import projectsController from '../controllers/projects';
+
+const projectsController = express.Router();
+    projectsController.get();
+    projectsController.get();
+    projectsController.post();
+    projectsController.put();
+    projectsController.delete();
+
+export default projectsController;

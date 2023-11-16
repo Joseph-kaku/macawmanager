@@ -6,7 +6,7 @@
       "version": "1.0.0"
     },
     "host": "Enter Render Here",
-    "basePath": "/",
+    "basePath": "render.com",
     "schemes": ["https"],
   
       "paths": {

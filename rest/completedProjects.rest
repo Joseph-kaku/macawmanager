@@ -7,8 +7,7 @@
 // | File Version 1.0                                                               |
 // +--------------------------------------------------------------------------------+
 // | CODE DESCRIPTION                                                               |
-// | .rest file for rest request testing. Please use Rest Client extension by       |
-// | Huachao Mao to utalize this file.                                              |
+// | .rest file for completed projects rest request testing.                        |
 // |                                                                                |
 // +--------------------------------------------------------------------------------+
 // | NOTES                                                                          |
@@ -17,4 +16,36 @@
 // | of us learn. Thanks, - Ryker.                                                  |
 // |                                                                                |
 // \-------------------------------------------------------------------------------*/
+
+
+// +--------------------------------------------------------------------------------+
+// | Local Host!                                                                    |
+// +--------------------------------------------------------------------------------+
+// Get All Completed Projects
+GET http://localhost:8080/completedprojects/ HTTP/1.1
+
+### Get Completed Project by Project ID
+GET http://localhost:8080/completedprojects/652b18a86092ca1297801bc9/ HTTP/1.1
+
+### Post Completed Project
+POST http://localhost:8080/completedprojects HTTP/1.1
+content-type: application/json
+{
+    "projectName": "Web Application Development for Wendy's Fast Food Chain",
+    "projectDescription": "Design and develop a user-friendly e-commerce platform with advanced features and functionalities.",
+    "technologies": [
+        "C++",
+        "C#",
+        "MongoDB",
+        "Express.js"
+    ],
+    "completionDate": "2023-10-04",
+    "projectManager": "Ryker Swensen"
+}
+
+
+
+// +--------------------------------------------------------------------------------+
+// | Render!                                                                        |
+// +--------------------------------------------------------------------------------|
 
