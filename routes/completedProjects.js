@@ -1,3 +1,4 @@
+"use strict";
 // +--------------------------------------------------------------------------------+
 // | Repository: https://github.com/Joseph-kaku/macawmanager                        |                                                                       
 // | Created for BYU-I Web Services Course.                                         |
@@ -7,7 +8,7 @@
 // | File Version 1.0                                                               |
 // +--------------------------------------------------------------------------------+
 // | CODE DESCRIPTION                                                               |
-// | File for the base/main router.                                                 |
+// | Routes for completed projects.                                                 |
 // |                                                                                |
 // +--------------------------------------------------------------------------------+
 // | NOTES                                                                          |
@@ -16,18 +17,16 @@
 // | of us learn. Thanks, - Ryker.                                                  |
 // |                                                                                |
 // \-------------------------------------------------------------------------------*/
-
-import express from 'express';
-import s from './swagger';
-import completedProjectsRouter from './completedProjects';
-import contactsRouter from './contacts';
-import teamsRouter from './teams';
-
-const baseRouter = express.Router();
-
-baseRouter.use('/', s);
-baseRouter.use('/completedprojects',completedProjectsRouter ); 
-baseRouter.use('/contactsRouter', contactsRouter);
-baseRouter.use('teamsRouter', teamsRouter)
-
-export default baseRouter;
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const completedProjects_1 = __importDefault(require("../controllers/completedProjects"));
+const completedProjectsRouter = express_1.default.Router();
+completedProjectsRouter.get('/', completedProjects_1.default.getAll);
+completedProjectsRouter.get('/:completedprojects', completedProjects_1.default.getCompletedProject);
+completedProjectsRouter.post('/', completedProjects_1.default.create);
+completedProjectsRouter.put('/:completedprojects', completedProjects_1.default.updateCompletedProject);
+completedProjectsRouter.delete('/:completedprojects', completedProjects_1.default.deleteCompletedProjects);
+exports.default = completedProjectsRouter;

@@ -1,3 +1,4 @@
+"use strict";
 // +--------------------------------------------------------------------------------+
 // | Repository: https://github.com/Joseph-kaku/macawmanager                        |                                                                       
 // | Created for BYU-I Web Services Course.                                         |
@@ -16,18 +17,18 @@
 // | of us learn. Thanks, - Ryker.                                                  |
 // |                                                                                |
 // \-------------------------------------------------------------------------------*/
-
-import express from 'express';
-import s from './swagger';
-import completedProjectsRouter from './completedProjects';
-import contactsRouter from './contacts';
-import teamsRouter from './teams';
-
-const baseRouter = express.Router();
-
-baseRouter.use('/', s);
-baseRouter.use('/completedprojects',completedProjectsRouter ); 
-baseRouter.use('/contactsRouter', contactsRouter);
-baseRouter.use('teamsRouter', teamsRouter)
-
-export default baseRouter;
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const swagger_1 = __importDefault(require("./swagger"));
+const completedProjects_1 = __importDefault(require("./completedProjects"));
+const contacts_1 = __importDefault(require("./contacts"));
+const teams_1 = __importDefault(require("./teams"));
+const baseRouter = express_1.default.Router();
+baseRouter.use('/', swagger_1.default);
+baseRouter.use('/completedprojects', completedProjects_1.default);
+baseRouter.use('/contactsRouter', contacts_1.default);
+baseRouter.use('teamsRouter', teams_1.default);
+exports.default = baseRouter;
