@@ -14,13 +14,13 @@
 // |                                                                                |
 // \-------------------------------------------------------------------------------*/
 
-import express from 'express';
-import teamsController from '../controllers/teams';
+// import express from 'express';
+// import teamsController from '../controllers/teams';
 
-const teamsRouter = express.Router();
-    teamsRouter.get('/', teamsController.getAll);
-    teamsRouter.get('/:teams', teamsController.getTeam);
-    teamsRouter.post('/', teamsController.create);
-    teamsRouter.delete('/:teams', teamsController.deleteTeam);
+// const teamsRouter = express.Router();
+//     teamsRouter.get('/', teamsController.getAll);
+//     teamsRouter.get('/:teams', teamsController.getTeam);
+//     teamsRouter.post('/', teamsController.create);
+//     teamsRouter.delete('/:teams', teamsController.deleteTeam);
 
-export default teamsRouter;
+// export default teamsRouter;
