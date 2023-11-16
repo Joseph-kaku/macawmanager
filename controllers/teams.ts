@@ -87,34 +87,34 @@ export const getTeam= (req: Request, res: Response): void => {
    }
  };
 
-export const updateTeam = async (req: Request, res: Response) => {
+// export const updateTeam = async (req: Request, res: Response) => {
   
-  try {
-    const teamName = req.params.teamName;
+//   try {
+//     const teamName = req.params.teamName;
 
-    if (!teamName) {
-      res.status(400).send({ message: 'Invalid Team Name.' });
-      return;
-    }
+//     if (!teamName) {
+//       res.status(400).send({ message: 'Invalid Team Name.' });
+//       return;
+//     }
 
-    const teams = await newTeams.findOne({ teamName }).exec();
+//     const teams = await newTeams.findOne({ teamName }).exec();
 
-    if (!teams) {
-      res.status(404).send({ message: 'No Team Found.' });
-      return;
-    }
+//     if (!teams) {
+//       res.status(404).send({ message: 'No Team Found.' });
+//       return;
+//     }
 
-    teams.teamName = teamName;
-    teams.teamGoal = req.body.teamGoal;
-    teams.teamTasks = req.body.teamTasks;
+//     teams.teamName = teamName;
+//     teams.teamGoal = req.body.teamGoal;
+//     teams.teamTasks = req.body.teamTasks;
 
-    await teams.save();
-    res.status(204).send();
+//     await teams.save();
+//     res.status(204).send();
   
-  } catch (err: any) {
-    res.status(500).json({ message: err.message || 'Error: could not complete team request.' });
-  }
-};
+//   } catch (err: any) {
+//     res.status(500).json({ message: err.message || 'Error: could not complete team request.' });
+//   }
+// };
 
 export const deleteTeam = async (req: Request, res: Response): Promise<void> => {
   try {
@@ -138,6 +138,6 @@ export default {
     create,
     getAll,
     getTeam,
-    updateTeam,
+    // updateTeam,
     deleteTeam
     };

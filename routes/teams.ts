@@ -10,9 +10,17 @@
 // | Router for teams.                                                              |
 // |                                                                                |
 // +--------------------------------------------------------------------------------+
-// | NOTES                                                                          |
-// | Please be sure to update files with comments so we can help eachother with this|
-// | team assignment. Please comment any issues, bugs, or successes to help each of |
-// | of us learn. Thanks, - Ryker.                                                  |
+// | NOTES                                                                          |                                                 |
 // |                                                                                |
 // \-------------------------------------------------------------------------------*/
+
+import express from 'express';
+import teamsController from '../controllers/teams';
+
+const teamsRouter = express.Router();
+    teamsRouter.get('/', teamsController.getAll);
+    teamsRouter.get('/:teams', teamsController.getTeam);
+    teamsRouter.post('/', teamsController.create);
+    teamsRouter.delete('/:teams', teamsController.deleteTeam);
+
+export default teamsRouter;

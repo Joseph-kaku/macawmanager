@@ -21,11 +21,13 @@ import express from 'express';
 import s from './swagger';
 import completedProjectsRouter from './completedProjects';
 import contactsRouter from './contacts';
+import teamsRouter from './teams';
 
 const baseRouter = express.Router();
 
 baseRouter.use('/', s);
 baseRouter.use('/completedprojects',completedProjectsRouter ); 
 baseRouter.use('/contactsRouter', contactsRouter);
+baseRouter.use('teamsRouter', teamsRouter)
 
 export default baseRouter;
