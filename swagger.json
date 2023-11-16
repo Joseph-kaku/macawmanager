@@ -6,7 +6,7 @@
       "version": "1.0.0"
     },
     "host": "Enter Render Here",
-    "basePath": "render.com",
+    "basePath": "macawmanager.onrender.com",
     "schemes": ["https"],
   
       "paths": {
