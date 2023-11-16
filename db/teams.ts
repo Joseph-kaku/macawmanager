@@ -10,9 +10,27 @@
 // | File for teams mongoose schema.                                                |
 // |                                                                                |
 // +--------------------------------------------------------------------------------+
-// | NOTES                                                                          |
-// | Please be sure to update files with comments so we can help eachother with this|
-// | team assignment. Please comment any issues, bugs, or successes to help each of |
-// | of us learn. Thanks, - Ryker.                                                  |
+// | NOTES                                                                          |                                                 |
 // |                                                                                |
 // \-------------------------------------------------------------------------------*/
+
+import mongoose, { Document, Schema } from 'mongoose';
+
+
+interface incompleteTeams extends Document {
+  teamName: { 
+    type: string,
+    required: [true, 'Team Name Required.']},
+  teamGoal: string;
+  teamTasks: string;
+}
+
+// Completed teams = teamsSchema
+const teamsSchema: Schema = new Schema({
+    teamName: { type: String,
+    required: [true, 'Team Name Required.'] },
+ teamGoal: { type: String },
+ teamTasks: { type: String },
+});
+
+export default mongoose.model<incompleteTeams>('teams', teamsSchema);
