@@ -7,7 +7,7 @@
     },
     "host": "macawmanager.onrender.com",
     "basePath": "/",
-  
+    "schemes": ["https"],
       "paths": {
         "/api-docs": {
           "get": {
