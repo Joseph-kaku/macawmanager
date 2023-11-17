@@ -5,9 +5,8 @@
       "description": "Web Application for MacawManager",
       "version": "1.0.0"
     },
-    "host": "Enter Render Here",
-    "basePath": "macawmanager.onrender.com",
-    "schemes": ["https"],
+    "host": "macawmanager.onrender.com",
+    "basePath": "/",
   
       "paths": {
         "/api-docs": {
