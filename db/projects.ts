@@ -8,7 +8,7 @@
 // +--------------------------------------------------------------------------------+
 // | CODE DESCRIPTION                                                               |
 // | File for projects mongoose schema.                                             |
-// |                                                                                |
+// | JK                                                                               |
 // +--------------------------------------------------------------------------------+
 // | NOTES                                                                          |
 // | Please be sure to update files with comments so we can help eachother with this|
@@ -16,3 +16,29 @@
 // | of us learn. Thanks, - Ryker.                                                  |
 // |                                                                                |
 // \-------------------------------------------------------------------------------*/
+
+import mongoose, { Document, Schema } from 'mongoose';
+
+
+interface Iprojects extends Document {
+    projectName: {
+        type: string,
+        required: [true, 'Project name is required.']
+    },
+    company: string;
+    projectionDescription: string;
+    technologies: [];
+    projectStatus: string;
+}
+
+const projectsSchema: Schema = new Schema({
+    projectName: {
+        type: String,
+        required: [true, 'Project name is required.']},
+        company: {type: String},
+        projectionDescription: {type: String},
+        technologies: {type: Array},
+        projectStatus: {type: String},
+});
+
+export default mongoose.model<Iprojects>('projects', projectsSchema);
