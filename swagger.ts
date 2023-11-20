@@ -1,7 +1,7 @@
 import swaggerAutogen from 'swagger-autogen';
 const doc = {
   info: {
-    title: 'API',
+    title: 'MacawManager',
     description: ''
   },
     //host: 'localhost:8080',

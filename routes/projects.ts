@@ -20,11 +20,30 @@
 
 import express from 'express';
 import projectsController from '../controllers/projects';
+import { Request, Response } from 'express';
+
 
 const projectsControllerRouter = express.Router();
-    projectsControllerRouter.get('/', projectsController.getAll);
-    // projectsControllerRouter.get();
-    projectsControllerRouter.post('/', projectsController.createNew);
+    projectsControllerRouter.get('/', (req: Request, res: Response) => {
+/*
+#swagger.tags = ['Projects']
+*/
+projectsController.getAll(req, res);
+});
+
+    projectsControllerRouter.get('/:projects', (req: Request, res: Response) => {
+/*
+#swagger.tags = ['Projects']
+*/
+projectsController.getOneProject(req, res);
+});
+
+    projectsControllerRouter.post('/', (req: Request, res: Response) => {
+/*
+#swagger.tags = ['Projects']
+*/
+        projectsController.createNew(req, res);
+    });
     // projectsControllerRouter.put();
     // projectsControllerRouter.delete();
 

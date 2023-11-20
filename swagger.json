@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "API",
+    "title": "MacawManager",
     "description": "",
     "version": "1.0.0"
   },
@@ -198,6 +198,77 @@
         "parameters": [
           {
             "name": "contacts",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/projects/": {
+      "get": {
+        "tags": [
+          "Projects"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Projects"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "projectName": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/projects/{projects}": {
+      "get": {
+        "tags": [
+          "Projects"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "projects",
             "in": "path",
             "required": true,
             "type": "string"

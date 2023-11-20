@@ -60,10 +60,37 @@ export const createNew = (req: Request, res: Response): void => {
     }
 };
 
+export const getOneProject = (req: Request, res: Response): void => {
+    try{
+        const projectId = new ObjectId(req.params.projectId)
+
+        projects.find({ projectId }).then((data: object) => {
+            if(Object.keys(projectId).length==0){
+                console.log("no project found");
+                res.status(404).send({ message: 'Project not found' });
+                return
+            } else {
+                console.log("Project found");
+                res.status(200).send(data);
+                console.log(data);
+                return
+            }
+        })
+        .catch(( err: { message: object }) =>{
+            res.status(500).send({
+                message: err.message || 'Some error occurred while retrieving the project.'
+            });
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+}; 
+
 
 
 
 export default {
     getAll,
-    createNew
+    createNew,
+    getOneProject
 };

@@ -21,6 +21,8 @@ import express from 'express';
 import s from './swagger';
 import completedProjectsRouter from './completedProjects';
 import contactsRouter from './contacts';
+import projectsRouter from './projects';
+import projects from './projects';
 // import teamsRouter from './teams';
 
 const baseRouter = express.Router();
@@ -28,6 +30,7 @@ const baseRouter = express.Router();
 baseRouter.use('/', s);
 baseRouter.use('/completedprojects',completedProjectsRouter ); 
 baseRouter.use('/contactsRouter', contactsRouter);
+baseRouter.use('/projects', projects);
 // baseRouter.use('teamsRouter', teamsRouter)
 
 export default baseRouter;
