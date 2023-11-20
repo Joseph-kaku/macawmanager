@@ -6,8 +6,8 @@ const doc = {
   },
     //host: 'localhost:8080',
     //schemes: ['http']
-  // host: 'put render here',
-  // schemes: ['https']
+  host: 'macawmanager.onrender.com',
+  schemes: ['https']
 };
 
 const outputFile = './swagger.json';
