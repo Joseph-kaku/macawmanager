@@ -48,7 +48,7 @@ export const create = (req: Request, res: Response): void => {
 
 
 export const getAll = (req: Request, res: Response): void => {
- 
+
   try {
     CompletedProjects.find({})
       .then((data: object) => {

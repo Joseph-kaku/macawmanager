@@ -18,14 +18,14 @@
 // \-------------------------------------------------------------------------------*/
 
 
-// import express from 'express';
-// import projectsController from '../controllers/projects';
+import express from 'express';
+import projectsController from '../controllers/projects';
 
-// const projectsController = express.Router();
-//     projectsController.get();
-//     projectsController.get();
-//     projectsController.post();
-//     projectsController.put();
-//     projectsController.delete();
+const projectsControllerRouter = express.Router();
+    projectsControllerRouter.get('/', projectsController.getAll);
+    // projectsControllerRouter.get();
+    projectsControllerRouter.post('/', projectsController.createNew);
+    // projectsControllerRouter.put();
+    // projectsControllerRouter.delete();
 
-// export default projectsController;
+export default projectsControllerRouter;

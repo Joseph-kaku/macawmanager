@@ -21,17 +21,20 @@ import dbConfig from '../config/db.config';
 import mongoose from 'mongoose';
 import completedProjectsModel from './completedProjects';
 import contactsModel from './contacts';
+import projectsModel from './projects';
 
 const db: {
   mongoose: typeof mongoose;
   url: string;
   completedProjects: any;
   contacts: any;
+  projects: any;
 } = {
   mongoose,
   url: dbConfig.url,
   completedProjects: completedProjectsModel,
-  contacts: contactsModel,   
+  contacts: contactsModel, 
+  projects: projectsModel,  
 };
 
 export default db;

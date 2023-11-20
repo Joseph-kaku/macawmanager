@@ -23,8 +23,7 @@ import mongoose, { Document, Schema } from 'mongoose';
 interface Iprojects extends Document {
     projectName: {
         type: string,
-        required: [true, 'Project name is required.']
-    },
+        required: [true, 'Project name is required.']},
     company: string;
     projectionDescription: string;
     technologies: [];
@@ -32,8 +31,7 @@ interface Iprojects extends Document {
 }
 
 const projectsSchema: Schema = new Schema({
-    projectName: {
-        type: String,
+    projectName: { type: String,
         required: [true, 'Project name is required.']},
         company: {type: String},
         projectionDescription: {type: String},
