@@ -68,8 +68,8 @@ export const getCompletedProject = (req: Request, res: Response): void => {
   try {
     const completedProjectId = new ObjectId(req.params.completedProjectId);
     
-     CompletedProjects.find({ completedProjectId })
-       .then((data: object) => {
+    CompletedProjects.find({ completedProjectId })
+      .then((data: object) => {
         
         if(Object.keys(completedProjectId).length==0){
           console.log("no project found");
@@ -82,14 +82,14 @@ export const getCompletedProject = (req: Request, res: Response): void => {
     }
   })
   .catch((err: { message: object }) => {
-         res.status(500).send({
-           message: err.message || 'Some error occurred while retrieving the project.'
-         });
-       });
-   } catch (err) {
-     res.status(500).json(err);
-   }
- };
+        res.status(500).send({
+          message: err.message || 'Some error occurred while retrieving the project.'
+        });
+      });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+};
 
 export const updateCompletedProject = async (req: Request, res: Response) => {
   

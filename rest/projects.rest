@@ -1,0 +1,71 @@
+// +--------------------------------------------------------------------------------+
+// | Repository: https://github.com/Joseph-kaku/macawmanager                        |                                                                       
+// | Created for BYU-I Web Services Course.                                         |
+// +--------------------------------------------------------------------------------+
+// | This module was programmed by Nicole Fluckiger, Jospeh Kaku, and Ryker Swensen |
+// +--------------------------------------------------------------------------------|
+// | File Version 1.0                                                               |
+// +--------------------------------------------------------------------------------+
+// | CODE DESCRIPTION                                                               |
+// | .rest file for completed projects rest request testing.                        |
+// |                                                                                |
+// +--------------------------------------------------------------------------------+
+// | NOTES                                                                          |
+// | Please be sure to update files with comments so we can help eachother with this|
+// | team assignment. Please comment any issues, bugs, or successes to help each of |
+// | of us learn. Thanks, - Ryker.                                                  |
+// |                                                                                |
+// \-------------------------------------------------------------------------------*/
+
+
+// +--------------------------------------------------------------------------------+
+// | Local Host!                                                                    |
+// +--------------------------------------------------------------------------------+
+
+# Get all projects
+GET http://localhost:8080/projects/ HTTP/1.1
+
+### Get one project 
+GET http://localhost:8080/projects/655413a9d15db7482da4a371 HTTP/1.1
+
+### Post new Project
+POST http://localhost:8080/projects HTTP/1.1
+Content-Type: application/json
+{
+    "projectName": "Web Application Development for Manga Site",
+    "company": "CrunchyNation",
+    "projectDescription": "Design and develop a user-friendly manga site with advanced features and functionalities.",
+    "technologies": [
+        "ReactJS",
+        "Node.js",
+        "MongoDB",
+        "Express.js"
+    ],
+    "projectStatus": "In Progress"
+}
+
+### Update a project's information
+PUT http://localhost:8080/projects/655413a9d15db7482da4a371 HTTP/1.1
+Content-Type: application/json
+{
+    "projectName": "Web Application Development for E-commerce Platform",
+    "company": "IntelliTech Solutions",
+    "projectDescription": "Design and develop a user-friendly e-commerce platform with advanced features and functionalities.",
+    "technologies": [
+    "ReactJS",
+    "Node.js",
+    "MongoDB",
+    "Express.js"
+    ],
+    "projectStatus": "In Progress"
+}
+
+
+### Delete a project
+DELETE http://localhost:8080/projects/655413a9d15db7482da4a374 HTTP/1.1
+
+
+
+// +--------------------------------------------------------------------------------+
+// | Render!                                                                        |
+// +--------------------------------------------------------------------------------|
