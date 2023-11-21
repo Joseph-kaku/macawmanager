@@ -86,11 +86,60 @@ export const getOneProject = (req: Request, res: Response): void => {
     }
 }; 
 
+export const updateProject = async (req: Request, res: Response) => {
+
+    try {
+        const projectName = req.params.projetName;
+
+        if (!projectName) {
+            res.status(400).send({ message: 'Invalid Project Name' });
+            return;
+        }
+
+        const findProject = await projects.findOne({ projectName }).exec();
+
+        if(!findProject) {
+            res.status(404).send({ message: 'Project not found' });
+            return;
+        }
+
+        findProject.projectName = projectName;
+        findProject.company = req.body.company;
+        findProject.projectDescription = req.body.projectDescription;
+        findProject.technologies = req.body.technologies;
+        findProject.projectStatus = req.body.projectStatus;
+
+        await findProject.save();
+        res.status(204).send();
+    } catch (err: any) {
+        res.status(500).json({ message: err.message || 'Some error occurred while processing your request' });
+    }
+};
+
+export const deleteProject = async (req:Request, res:Response): Promise<void> => {
+    try {
+        const projectName = req.params.projectName;
+        if (!projectName) {
+            res.status(400).json({ message: 'Invalid Project Name Supplied' });
+            return;
+    }
+    const result = await projects.deleteOne({ projectName }).exec();
+    if (result.deletedCount === 0) {
+        res.status(404).json({ message: 'Project not found' });
+        return;
+    }
+    res.status(200).send();
+} catch (err: any) {
+    res.status(500).json({ message: err.message || 'Some error occurred while deleting the project.' })
+}
+};
 
 
 
 export default {
     getAll,
     createNew,
-    getOneProject
+    getOneProject,
+    updateProject,
+    deleteProject
 };

@@ -44,7 +44,18 @@ projectsController.getOneProject(req, res);
 */
         projectsController.createNew(req, res);
     });
-    // projectsControllerRouter.put();
-    // projectsControllerRouter.delete();
+
+    projectsControllerRouter.put('/:projects', (req:Request, res:Response) => {
+/*
+#swagger.tags = ['Projects']
+*/
+projectsController.updateProject(req, res);
+    } );
+    projectsControllerRouter.delete('/:projects', (req:Request, res:Response) => {
+/*
+#swagger.tags = ['Projects']
+*/
+projectsController.deleteProject(req, res);
+    });
 
 export default projectsControllerRouter;
