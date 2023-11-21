@@ -69,3 +69,9 @@ DELETE http://localhost:8080/projects/655413a9d15db7482da4a374 HTTP/1.1
 // +--------------------------------------------------------------------------------+
 // | Render!                                                                        |
 // +--------------------------------------------------------------------------------|
+
+###Get all projects
+GET https://macawmanager.onrender.com HTTP/1.1
+
+###Get one project
+GET https://macawmanager.onrender.com/ HTTP/1.1
