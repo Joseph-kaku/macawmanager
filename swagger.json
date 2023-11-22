@@ -13,6 +13,9 @@
   "paths": {
     "/api-docs": {
       "get": {
+        "tags": [
+          "API-Docs"
+        ],
         "description": "",
         "responses": {
           "default": {
@@ -23,6 +26,9 @@
     },
     "/completedprojects/": {
       "get": {
+        "tags": [
+          "Completed Projects"
+        ],
         "description": "",
         "responses": {
           "200": {
@@ -34,6 +40,9 @@
         }
       },
       "post": {
+        "tags": [
+          "Completed Projects"
+        ],
         "description": "",
         "parameters": [
           {
@@ -42,9 +51,22 @@
             "schema": {
               "type": "object",
               "properties": {
-                "projectName": {
-                  "example": "any"
-                }
+                
+                  "projectName": {
+                      "example": "any"
+                  },
+                  "projectDescription": {
+                      "example": "any"
+                  },
+                  "technologies": {
+                      "example": "any"
+                  },
+                  "completionDate": {
+                      "example": "any"
+                  },
+                  "projectManager": {
+                      "example": "any"
+                  }
               }
             }
           }
@@ -61,6 +83,9 @@
     },
     "/completedprojects/{completedprojects}": {
       "get": {
+        "tags": [
+          "Completed Projects"
+        ],
         "description": "",
         "parameters": [
           {
@@ -83,6 +108,9 @@
         }
       },
       "put": {
+        "tags": [
+          "Completed Projects"
+        ],
         "description": "",
         "parameters": [
           {
@@ -97,19 +125,23 @@
             "schema": {
               "type": "object",
               "properties": {
+                
+                "projectName": {
+                    "example": "any"
+                },
                 "projectDescription": {
-                  "example": "any"
+                    "example": "any"
                 },
                 "technologies": {
-                  "example": "any"
+                    "example": "any"
                 },
                 "completionDate": {
-                  "example": "any"
+                    "example": "any"
                 },
                 "projectManager": {
-                  "example": "any"
+                    "example": "any"
                 }
-              }
+            }
             }
           }
         ],
@@ -129,6 +161,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Completed Projects"
+        ],
         "description": "",
         "parameters": [
           {
@@ -154,8 +189,11 @@
         }
       }
     },
-    "/contactsRouter/": {
+    "/contacts/": {
       "get": {
+        "tags": [
+          "Contacts"
+        ],
         "description": "",
         "responses": {
           "200": {
@@ -167,6 +205,9 @@
         }
       },
       "post": {
+        "tags": [
+          "Contacts"
+        ],
         "description": "",
         "parameters": [
           {
@@ -192,8 +233,11 @@
         }
       }
     },
-    "/contactsRouter/{contacts}": {
+    "/contacts/{contacts}": {
       "get": {
+        "tags": [
+          "Contacts"
+        ],
         "description": "",
         "parameters": [
           {

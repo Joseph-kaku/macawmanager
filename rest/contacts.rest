@@ -1,5 +1,72 @@
-/// Get All Contacts
+// +--------------------------------------------------------------------------------+
+// | Repository: https://github.com/Joseph-kaku/macawmanager                        |                                                                       
+// | Created for BYU-I Web Services Course.                                         |
+// +--------------------------------------------------------------------------------+
+// | This module was programmed by Nicole Fluckiger, Jospeh Kaku, and Ryker Swensen |
+// +--------------------------------------------------------------------------------|
+// | File Version 1.2                                                               |
+// +--------------------------------------------------------------------------------+
+// | CODE DESCRIPTION                                                               |
+// | .rest file for contacts rest request testing.                        |
+// |                                                                                |
+// +--------------------------------------------------------------------------------+
+// | NOTES                                                                          |
+// | Please be sure to update files with comments so we can help eachother with this|
+// | team assignment. Please comment any issues, bugs, or successes to help each of |
+// | of us learn. Thanks, - Ryker.                                                  |
+// |                                                                                |
+// \-------------------------------------------------------------------------------*/
+
+
+// +--------------------------------------------------------------------------------+
+// | Local Host!                                                                    |
+// +--------------------------------------------------------------------------------+
+// GET all contacts
 GET http://localhost:8080/contacts/ HTTP/1.1
 
 ### GET Contact by ID
 GET http://localhost:8080/contacts/65541399d15db7482da4a369 HTTP/1.1
+
+### Post Contact
+POST http://localhost:8080/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Ryker Swensen",
+    "title": "CO-Founder",
+    "email": "swe18003@byui.edu",
+    "phone": "+1-212-555-1111",
+    "department": "Software Engineering",
+    "projects": [
+        "Web Application Development for E-commerce Platform",
+        "Mobile Application Development for Fitness Tracking"
+    ]
+}
+
+// +--------------------------------------------------------------------------------+
+// | Render!                                                                        |
+// +--------------------------------------------------------------------------------|
+
+### Get All Contacts
+GET https://macawmanager.onrender.com/contacts HTTP/1.1
+
+/////////////////NEEDS TESTING ONCE RENDER IS UPDATED!!!!!!/////////////////////
+
+### Get Contact by ID
+GET https://macawmanager.onrender.com/contacts/655d70ae53f8d13e771823bd HTTP/1.1
+
+### Post Contact
+POST https://macawmanager.onrender.com/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Joseph Kaku",
+    "title": "CO-Founder",
+    "email": "jok18003@byui.edu",
+    "phone": "+1-212-555-2222",
+    "department": "Software Engineering",
+    "projects": [
+        "Web Application Development for E-commerce Platform",
+        "Mobile Application Development for Fitness Tracking"
+    ]
+}
