@@ -4,7 +4,7 @@
 // +--------------------------------------------------------------------------------+
 // | This module was programmed by Nicole Fluckiger, Jospeh Kaku, and Ryker Swensen |
 // +--------------------------------------------------------------------------------|
-// | File Version 1.0                                                               |
+// | File Version 1.2                                                               |
 // +--------------------------------------------------------------------------------+
 // | CODE DESCRIPTION                                                               |
 // | Routes for contacts.                                                           |
@@ -22,7 +22,7 @@ import contactsController from '../controllers/contacts';
 
 const contactsRouter = express.Router();
     contactsRouter.get('/', contactsController.getAll);
-    contactsRouter.get('/:contacts', contactsController.getContact);
+    contactsRouter.get('/:id', contactsController.getContact);
     contactsRouter.post('/', contactsController.create);
 
 export default contactsRouter;

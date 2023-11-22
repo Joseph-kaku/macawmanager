@@ -4,7 +4,7 @@
 // +--------------------------------------------------------------------------------+
 // | This module was programmed by Nicole Fluckiger, Jospeh Kaku, and Ryker Swensen |
 // +--------------------------------------------------------------------------------|
-// | File Version 1.0                                                               |
+// | File Version 1.2                                                               |
 // +--------------------------------------------------------------------------------+
 // | CODE DESCRIPTION                                                               |
 // | Controller for contacts.                                                       |
@@ -19,6 +19,7 @@
 
 import { Request, Response } from 'express';
 import db from '../db';
+import { ObjectId } from 'mongodb';
 const Contacts = db.contacts;
 
 export const create = (req: Request, res: Response): void => {
@@ -65,30 +66,20 @@ export const getAll = (req: Request, res: Response): void => {
 
 export const getContact = (req: Request, res: Response): void => {
   try {
-    const name = req.params.name;
-    
-     Contacts.find({ name })
-       .then((data: object) => {
-        
-        if(Object.keys(name).length==0){
-          console.log("no contact found");
-          res.status(404).send({ message: 'Contact not found' });
-          return
-        }else{
-          console.log("Contact found");
-          res.status(200).send(data); console.log(data);
-          return
-    }
-  })
-  .catch((err: { message: object }) => {
-         res.status(500).send({
-           message: err.message || 'Some error occurred while retrieving the contact.'
-         });
-       });
-   } catch (err) {
-     res.status(500).json(err);
-   }
- };
+    const contacts = new ObjectId(req.params.id);
+     Contacts.findById( req.params.id )
+     .then((data: object) => {
+      res.status(200).send(data);
+      })
+      .catch((err: { message: object }) => {
+        res.status(500).send({
+          message: err.message || 'Some error occurred while retrieving the contact.'
+        });
+      });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+};
 
 
 export default {

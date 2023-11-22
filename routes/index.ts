@@ -4,7 +4,7 @@
 // +--------------------------------------------------------------------------------+
 // | This module was programmed by Nicole Fluckiger, Jospeh Kaku, and Ryker Swensen |
 // +--------------------------------------------------------------------------------|
-// | File Version 1.0                                                               |
+// | File Version 1.2                                                               |
 // +--------------------------------------------------------------------------------+
 // | CODE DESCRIPTION                                                               |
 // | File for the base/main router.                                                 |
@@ -29,7 +29,7 @@ const baseRouter = express.Router();
 
 baseRouter.use('/', s);
 baseRouter.use('/completedprojects',completedProjectsRouter ); 
-baseRouter.use('/contactsRouter', contactsRouter);
+baseRouter.use('/contacts', contactsRouter);
 baseRouter.use('/projects', projects);
 // baseRouter.use('teamsRouter', teamsRouter)
 

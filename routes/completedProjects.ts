@@ -4,7 +4,7 @@
 // +--------------------------------------------------------------------------------+
 // | This module was programmed by Nicole Fluckiger, Jospeh Kaku, and Ryker Swensen |
 // +--------------------------------------------------------------------------------|
-// | File Version 1.0                                                               |
+// | File Version 1.2                                                               |
 // +--------------------------------------------------------------------------------+
 // | CODE DESCRIPTION                                                               |
 // | Routes for completed projects.                                                 |
@@ -22,9 +22,9 @@ import completedProjectsController from '../controllers/completedProjects';
 
 const completedProjectsRouter = express.Router();
     completedProjectsRouter.get('/', completedProjectsController.getAll);
-    completedProjectsRouter.get('/completedprojects/:id', completedProjectsController.getCompletedProject);
+    completedProjectsRouter.get('/:id', completedProjectsController.getCompletedProject);
     completedProjectsRouter.post('/', completedProjectsController.create);
-    completedProjectsRouter.put('/:completedprojects', completedProjectsController.updateCompletedProject);
-    completedProjectsRouter.delete('/:completedprojects', completedProjectsController.deleteCompletedProjects);
+    completedProjectsRouter.put('/:id', completedProjectsController.updateCompletedProject);
+    completedProjectsRouter.delete('/:id', completedProjectsController.deleteCompletedProjects);
 
 export default completedProjectsRouter;

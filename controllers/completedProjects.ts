@@ -4,7 +4,7 @@
 // +--------------------------------------------------------------------------------+
 // | This module was programmed by Nicole Fluckiger, Jospeh Kaku, and Ryker Swensen |
 // +--------------------------------------------------------------------------------|
-// | File Version 1.0                                                               |
+// | File Version 1.2                                                               |
 // +--------------------------------------------------------------------------------+
 // | CODE DESCRIPTION                                                               |
 // | Controller for completed projects.                                             |
@@ -21,6 +21,10 @@ import { Request, Response } from 'express';
 import db from '../db';
 import { ObjectId } from 'mongodb';
 const CompletedProjects = db.completedProjects;
+
+const isError = (error: unknown): error is Error => {
+  return error instanceof Error;
+};
 
 export const create = (req: Request, res: Response): void => {
 
@@ -64,76 +68,42 @@ export const getAll = (req: Request, res: Response): void => {
   }
 };
 
-
-const getCompletedProject = async (req: Request, res: Response) => {
-  // #swagger.summary = "This endpoint returns the details of a single completed project."
-  /*  #swagger.parameters['completedProjectId'] = {
-                in: 'path',
-                description: 'A MongoDB ObjectId',
-                required: true
-        } */
+export const getCompletedProject = (req: Request, res: Response): void => {
   try {
-    let id: ObjectId;
-    try {
-      id = new ObjectId(req.params.projectId);
+    const completedProjectId = new ObjectId(req.params.id);
+     CompletedProjects.findById( req.params.id )
+       .then((data: object) => {
+        res.status(200).send(data);
+        })
+        .catch((err: { message: object }) => {
+          res.status(500).send({
+            message: err.message || 'Some error occurred while retrieving the completed project.'
+          });
+        });
     } catch (err) {
-      /* #swagger.responses[400] = {
-            description: 'An invalid MongoDB ObjectId was provided.'
-    } */
-      res.status(400).json('Please provide a valid completed project id.');
-      return;
+      res.status(500).json(err);
     }
-    const completedProjects = await CompletedProjects.findById(id).exec();
-    res.status(200).json(completedProjects);
-    /* #swagger.responses[200] = {
-            description: 'Returns a completed project object.',
-            schema: { $ref: '#/definitions/CompletedProject' },
-    } */
-    res.status(200).json(completedProjects);
-  } catch (err) {
-    /* #swagger.responses[500] = {
-            description: 'An error occured.'
-    } */
-    res.status(500).json(err);
-  }
-};
-
-// export const getCompletedProject = (req: Request, res: Response): void => {
-//   try {
-//     const completedProjectId = new ObjectId(req.params.id);
-//      CompletedProjects.findById({ completedProjectId })
-//        .then((data: object) => {
-//         res.status(200).send(data);
-//         })
-//         .catch((err: { message: object }) => {
-//           res.status(500).send({
-//             message: err.message || 'Some error occurred while retrieving the completed project.'
-//           });
-//         });
-//     } catch (err) {
-//       res.status(500).json(err);
-//     }
-//   };
+  };
   
 
 export const updateCompletedProject = async (req: Request, res: Response) => {
   
   try {
-    const projectName = req.params.projectName;
+    const completedProjectId = req.params.id;
 
-    if (!projectName) {
-      res.status(400).send({ message: 'Invalid Project Name Supplied' });
+    if (!completedProjectId) {
+      res.status(400).send({ message: 'Invalid Project ID Supplied' });
       return;
     }
 
-    const completedProjects = await CompletedProjects.findOne({ projectName }).exec();
+    const completedProjects = await CompletedProjects.findById( req.params.id )
 
     if (!completedProjects) {
       res.status(404).send({ message: 'Project not found' });
       return;
     }
 
-    completedProjects.projectName = projectName;
+    completedProjects.projectName = req.body.projectName;
     completedProjects.projectDescription = req.body.projectDescription;
     completedProjects.technologies = req.body.technologies;
     completedProjects.completionDate = req.body.completionDate;
@@ -149,20 +119,21 @@ export const updateCompletedProject = async (req: Request, res: Response) => {
 
 export const deleteCompletedProjects = async (req: Request, res: Response): Promise<void> => {
   try {
-    const projectName = req.params.projectName;
-    if (!projectName) {
-      res.status(400).json({ message: 'Invalid Project Name Supplied' });
+    const completedProjectId = req.params.id;
+    if (!completedProjectId) {
+      res.status(400).json({ message: 'Invalid Completed Project ID Supplied' });
       return;
     }
-    const result = await CompletedProjects.deleteOne({ projectName }).exec();
+    const result = await CompletedProjects.findById( req.params.id ).deleteOne().exec();
     if (result.deletedCount === 0) {
-      res.status(404).json({ message: 'Project not found' });
+      res.status(404).json({ message: 'Completed project not found' });
       return;
     }
     res.status(200).send();
   } catch (err: any) {
-    res.status(500).json({ message: err.message || 'Some error occurred while deleting the project.' });
+    res.status(500).json({ message: err.message || 'Some error occurred while deleting the completed project.' });
   }
+    
 };
 
 export default {
