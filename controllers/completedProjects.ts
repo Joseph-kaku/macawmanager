@@ -19,7 +19,7 @@
 
 import { Request, Response } from 'express';
 import db from '../db';
-const ObjectId = require('mongodb').ObjectId;
+import { ObjectId } from 'mongodb';
 const CompletedProjects = db.completedProjects;
 
 export const create = (req: Request, res: Response): void => {
@@ -64,32 +64,57 @@ export const getAll = (req: Request, res: Response): void => {
   }
 };
 
-export const getCompletedProject = (req: Request, res: Response): void => {
+
+const getCompletedProject = async (req: Request, res: Response) => {
+  // #swagger.summary = "This endpoint returns the details of a single completed project."
+  /*  #swagger.parameters['completedProjectId'] = {
+                in: 'path',
+                description: 'A MongoDB ObjectId',
+                required: true
+        } */
   try {
-    const completedProjectId = new ObjectId(req.params.completedProjectId);
-    
-     CompletedProjects.find({ completedProjectId })
-       .then((data: object) => {
-        
-        if(Object.keys(completedProjectId).length==0){
-          console.log("no project found");
-          res.status(404).send({ message: 'Project not found' });
-          return
-        }else{
-          console.log("Project found");
-          res.status(200).send(data); console.log(data);
-          return
+    let id: ObjectId;
+    try {
+      id = new ObjectId(req.params.projectId);
+    } catch (err) {
+      /* #swagger.responses[400] = {
+            description: 'An invalid MongoDB ObjectId was provided.'
+    } */
+      res.status(400).json('Please provide a valid completed project id.');
+      return;
     }
-  })
-  .catch((err: { message: object }) => {
-         res.status(500).send({
-           message: err.message || 'Some error occurred while retrieving the project.'
-         });
-       });
-   } catch (err) {
-     res.status(500).json(err);
-   }
- };
+    const completedProjects = await CompletedProjects.findById(id).exec();
+    res.status(200).json(completedProjects);
+    /* #swagger.responses[200] = {
+            description: 'Returns a completed project object.',
+            schema: { $ref: '#/definitions/CompletedProject' },
+    } */
+    res.status(200).json(completedProjects);
+  } catch (err) {
+    /* #swagger.responses[500] = {
+            description: 'An error occured.'
+    } */
+    res.status(500).json(err);
+  }
+};
+
+// export const getCompletedProject = (req: Request, res: Response): void => {
+//   try {
+//     const completedProjectId = new ObjectId(req.params.id);
+//      CompletedProjects.findById({ completedProjectId })
+//        .then((data: object) => {
+//         res.status(200).send(data);
+//         })
+//         .catch((err: { message: object }) => {
+//           res.status(500).send({
+//             message: err.message || 'Some error occurred while retrieving the completed project.'
+//           });
+//         });
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+//   };
+  
 
 export const updateCompletedProject = async (req: Request, res: Response) => {
   

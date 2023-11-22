@@ -22,7 +22,7 @@ import completedProjectsController from '../controllers/completedProjects';
 
 const completedProjectsRouter = express.Router();
     completedProjectsRouter.get('/', completedProjectsController.getAll);
-    completedProjectsRouter.get('/:completedprojects', completedProjectsController.getCompletedProject);
+    completedProjectsRouter.get('/completedprojects/:id', completedProjectsController.getCompletedProject);
     completedProjectsRouter.post('/', completedProjectsController.create);
     completedProjectsRouter.put('/:completedprojects', completedProjectsController.updateCompletedProject);
     completedProjectsRouter.delete('/:completedprojects', completedProjectsController.deleteCompletedProjects);

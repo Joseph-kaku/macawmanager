@@ -25,7 +25,7 @@
 GET http://localhost:8080/completedprojects/ HTTP/1.1
 
 ### Get Completed Project by Project ID
-GET http://localhost:8080/completedprojects/652b18a86092ca1297801bc9/ HTTP/1.1
+GET http://localhost:8080/completedprojects/655599e91fe3a853a6d85891/ HTTP/1.1
 
 ### Post Completed Project
 POST http://localhost:8080/completedprojects HTTP/1.1
