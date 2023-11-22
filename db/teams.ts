@@ -29,8 +29,8 @@ interface incompleteTeams extends Document {
 const teamsSchema: Schema = new Schema({
     teamName: { type: String,
     required: [true, 'Team Name Required.'] },
- teamGoal: { type: String },
- teamTasks: { type: String },
+    teamGoal: { type: String },
+    teamTasks: { type: String },
 });
 
 export default mongoose.model<incompleteTeams>('teams', teamsSchema);
