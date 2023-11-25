@@ -16,7 +16,7 @@
         "tags": [
           "API-Docs"
         ],
-        "description": "",
+        "description": "Get API-DOCS",
         "responses": {
           "default": {
             "description": ""
@@ -29,7 +29,7 @@
         "tags": [
           "Completed Projects"
         ],
-        "description": "",
+        "description": "Get All Completed Projects",
         "responses": {
           "200": {
             "description": "OK"
@@ -43,7 +43,7 @@
         "tags": [
           "Completed Projects"
         ],
-        "description": "",
+        "description": "Add a new Completed Project",
         "parameters": [
           {
             "name": "body",
@@ -86,13 +86,14 @@
         "tags": [
           "Completed Projects"
         ],
-        "description": "",
+        "description": "Get A Single Completed Project By ID",
         "parameters": [
           {
             "name": "completedprojects",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "Please Enter Completed Project ID"
           }
         ],
         "responses": {
@@ -111,13 +112,14 @@
         "tags": [
           "Completed Projects"
         ],
-        "description": "",
+        "description": "Update Completed Project By ID",
         "parameters": [
           {
             "name": "completedprojects",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "Please Enter Completed Project ID"
           },
           {
             "name": "body",
@@ -164,13 +166,14 @@
         "tags": [
           "Completed Projects"
         ],
-        "description": "",
+        "description": "Delete Completed Project By ID",
         "parameters": [
           {
             "name": "completedprojects",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "Please Enter Completed Project ID"
           }
         ],
         "responses": {
@@ -194,7 +197,7 @@
         "tags": [
           "Contacts"
         ],
-        "description": "",
+        "description": "Get All Contacts",
         "responses": {
           "200": {
             "description": "OK"
@@ -208,7 +211,7 @@
         "tags": [
           "Contacts"
         ],
-        "description": "",
+        "description": "Add A New Contact",
         "parameters": [
           {
             "name": "body",
@@ -218,7 +221,22 @@
               "properties": {
                 "name": {
                   "example": "any"
-                }
+              },
+              "title": {
+                  "example": "any"
+              },
+              "email": {
+                  "example": "any"
+              },
+              "phone": {
+                  "example": "any"
+              },
+              "department": {
+                  "example": "any"
+              },
+              "projects": {
+                "example": "any"
+            }
               }
             }
           }
@@ -238,21 +256,19 @@
         "tags": [
           "Contacts"
         ],
-        "description": "",
+        "description": "Get A Single Contact By ID",
         "parameters": [
           {
             "name": "contacts",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "Please Enter A Contacts ID"
           }
         ],
         "responses": {
           "200": {
             "description": "OK"
-          },
-          "404": {
-            "description": "Not Found"
           },
           "500": {
             "description": "Internal Server Error"

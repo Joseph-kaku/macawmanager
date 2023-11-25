@@ -4,7 +4,7 @@
 // +--------------------------------------------------------------------------------+
 // | This module was programmed by Nicole Fluckiger, Jospeh Kaku, and Ryker Swensen |
 // +--------------------------------------------------------------------------------|
-// | File Version 1.3                                                               |
+// | File Version 1.4                                                               |
 // +--------------------------------------------------------------------------------+
 // | CODE DESCRIPTION                                                               |
 // | .rest file for completed projects rest request testing.                        |
@@ -91,10 +91,6 @@ content-type: application/json
     "completionDate": "2023-10-04",
     "projectManager": "Ryker Swensen"
 }
-
-
-
-/////////////////NEEDS TESTING ONCE RENDER IS UPDATED!!!!!!/////////////////////
 
 ### Put Completed Project
 PUT https://macawmanager.onrender.com/completedprojects/655d6de2e9166f72183db64b HTTP/1.1
