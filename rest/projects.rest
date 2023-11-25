@@ -4,7 +4,7 @@
 // +--------------------------------------------------------------------------------+
 // | This module was programmed by Nicole Fluckiger, Jospeh Kaku, and Ryker Swensen |
 // +--------------------------------------------------------------------------------|
-// | File Version 1.0                                                               |
+// | File Version 1.1                                                               |
 // +--------------------------------------------------------------------------------+
 // | CODE DESCRIPTION                                                               |
 // | .rest file for completed projects rest request testing.                        |
@@ -22,7 +22,7 @@
 // | Local Host!                                                                    |
 // +--------------------------------------------------------------------------------+
 
-# Get all projects
+// Get all projects
 GET http://localhost:8080/projects/ HTTP/1.1
 
 ### Get one project 

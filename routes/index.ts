@@ -4,7 +4,7 @@
 // +--------------------------------------------------------------------------------+
 // | This module was programmed by Nicole Fluckiger, Jospeh Kaku, and Ryker Swensen |
 // +--------------------------------------------------------------------------------|
-// | File Version 1.2                                                               |
+// | File Version 1.3                                                               |
 // +--------------------------------------------------------------------------------+
 // | CODE DESCRIPTION                                                               |
 // | File for the base/main router.                                                 |
@@ -21,7 +21,6 @@ import express from 'express';
 import s from './swagger';
 import completedProjectsRouter from './completedProjects';
 import contactsRouter from './contacts';
-import projectsRouter from './projects';
 import projects from './projects';
 import teamsRouter from './teams';
 
@@ -31,6 +30,6 @@ baseRouter.use('/', s);
 baseRouter.use('/completedprojects',completedProjectsRouter ); 
 baseRouter.use('/contacts', contactsRouter);
 baseRouter.use('/projects', projects);
-baseRouter.use('teamsRouter', teamsRouter)
+baseRouter.use('/teams', teamsRouter)
 
 export default baseRouter;
