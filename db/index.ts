@@ -22,6 +22,7 @@ import mongoose from 'mongoose';
 import completedProjectsModel from './completedProjects';
 import contactsModel from './contacts';
 import projectsModel from './projects';
+import teamsModel from './teams';
 
 const db: {
   mongoose: typeof mongoose;
@@ -29,12 +30,14 @@ const db: {
   completedProjects: any;
   contacts: any;
   projects: any;
+  teams:any;
 } = {
   mongoose,
   url: dbConfig.url,
   completedProjects: completedProjectsModel,
   contacts: contactsModel, 
   projects: projectsModel,  
+  teams: teamsModel,
 };
 
 export default db;

@@ -1,0 +1,19 @@
+
+# Get All Teams
+GET https://macawmanager.onrender.com/teams/ HTTP/1.1
+
+### Get Team by Project ID
+GET https://macawmanager.onrender.com/teams/655e6a902ce7a017ecfdde82/ HTTP/1.1
+
+### Post New Team
+POST https://macawmanager.onrender.com/teams/ HTTP/1.1
+content-type: application/json
+
+{
+    "TeamName": "Team Nicole",
+    "TeamGoals": "Complete the CSE341 final by December 14th.",
+    "TeamTasks": "HTTP POST, Node.js project creation."
+}
+
+### Delete Team
+DELETE https://macawmanager.onrender.com/teams/655e6a902ce7a017ecfdde82/ HTTP/1.1

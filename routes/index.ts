@@ -23,7 +23,7 @@ import completedProjectsRouter from './completedProjects';
 import contactsRouter from './contacts';
 import projectsRouter from './projects';
 import projects from './projects';
-// import teamsRouter from './teams';
+import teamsRouter from './teams';
 
 const baseRouter = express.Router();
 
@@ -31,6 +31,6 @@ baseRouter.use('/', s);
 baseRouter.use('/completedprojects',completedProjectsRouter ); 
 baseRouter.use('/contacts', contactsRouter);
 baseRouter.use('/projects', projects);
-// baseRouter.use('teamsRouter', teamsRouter)
+baseRouter.use('teamsRouter', teamsRouter)
 
 export default baseRouter;
