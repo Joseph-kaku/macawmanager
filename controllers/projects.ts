@@ -4,7 +4,7 @@
 // +--------------------------------------------------------------------------------+
 // | This module was programmed by Nicole Fluckiger, Jospeh Kaku, and Ryker Swensen |
 // +--------------------------------------------------------------------------------|
-// | File Version 1.0                                                               |
+// | File Version 1.1                                                               |
 // +--------------------------------------------------------------------------------+
 // | CODE DESCRIPTION                                                               |
 // | Controller for projects.                                                       |
@@ -19,9 +19,8 @@
 
 import { Request, Response } from  'express';
 import db from '../db';
-const ObjectId = require('mongodb').ObjectId;
+import { ObjectId } from 'mongodb';
 const projects = db.projects;
-
 
 export const getAll = (req: Request, res: Response): void => {
     try{
@@ -62,48 +61,39 @@ export const createNew = (req: Request, res: Response): void => {
 
 export const getOneProject = (req: Request, res: Response): void => {
     try{
-        const projectId = new ObjectId(req.params.projectId)
-
-        projects.find({ projectId }).then((data: object) => {
-            if(Object.keys(projectId).length==0){
-                console.log("no project found");
-                res.status(404).send({ message: 'Project not found' });
-                return
-            } else {
-                console.log("Project found");
-                res.status(200).send(data);
-                console.log(data);
-                return
-            }
-        })
-        .catch(( err: { message: object }) =>{
-            res.status(500).send({
-                message: err.message || 'Some error occurred while retrieving the project.'
+        const projectId = new ObjectId(req.params.id)
+        projects.findById( req.params.id )
+        .then((data: object) => {
+            res.status(200).send(data);
+            })
+            .catch((err: { message: object }) => {
+              res.status(500).send({
+                message: err.message || 'Some error occurred while retrieving the single project.'
+              });
             });
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }
-}; 
+        } catch (err) {
+          res.status(500).json(err);
+        }
+      };
 
 export const updateProject = async (req: Request, res: Response) => {
 
     try {
-        const projectName = req.params.projetName;
+        const projectId = req.params.id;
 
-        if (!projectName) {
-            res.status(400).send({ message: 'Invalid Project Name' });
+        if (!projectId) {
+            res.status(400).send({ message: 'Invalid Project ID' });
             return;
         }
 
-        const findProject = await projects.findOne({ projectName }).exec();
+        const findProject = await projects.findById(req.params.id)
 
         if(!findProject) {
             res.status(404).send({ message: 'Project not found' });
             return;
         }
 
-        findProject.projectName = projectName;
+        findProject.projectName = req.body.projectName;
         findProject.company = req.body.company;
         findProject.projectDescription = req.body.projectDescription;
         findProject.technologies = req.body.technologies;
@@ -118,12 +108,12 @@ export const updateProject = async (req: Request, res: Response) => {
 
 export const deleteProject = async (req:Request, res:Response): Promise<void> => {
     try {
-        const projectName = req.params.projectName;
-        if (!projectName) {
-            res.status(400).json({ message: 'Invalid Project Name Supplied' });
+        const projectId = req.params.id;
+        if (!projectId) {
+            res.status(400).json({ message: 'Invalid Project ID Supplied' });
             return;
     }
-    const result = await projects.deleteOne({ projectName }).exec();
+    const result = await projects.findById( req.params.id ).deleteOne().exec();
     if (result.deletedCount === 0) {
         res.status(404).json({ message: 'Project not found' });
         return;
