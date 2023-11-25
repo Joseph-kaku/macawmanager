@@ -1,18 +1,64 @@
+// +--------------------------------------------------------------------------------+
+// | Repository: https://github.com/Joseph-kaku/macawmanager                        |                                                                       
+// | Created for BYU-I Web Services Course.                                         |
+// +--------------------------------------------------------------------------------+
+// | This module was programmed by Nicole Fluckiger, Jospeh Kaku, and Ryker Swensen |
+// +--------------------------------------------------------------------------------|
+// | File Version 1.2                                                               |
+// +--------------------------------------------------------------------------------+
+// | CODE DESCRIPTION                                                               |
+// | .rest file for completed projects rest request testing.                        |
+// |                                                                                |
+// +--------------------------------------------------------------------------------+
+// | NOTES                                                                          |
+// | Please be sure to update files with comments so we can help eachother with this|
+// | team assignment. Please comment any issues, bugs, or successes to help each of |
+// | of us learn. Thanks, - Ryker.                                                  |
+// |                                                                                |
+// \-------------------------------------------------------------------------------*/
+
+
+// +--------------------------------------------------------------------------------+
+// | Local Host!                                                                    |
+// +--------------------------------------------------------------------------------+
+
+// Get all teams
+GET http://localhost:8080/teams/ HTTP/1.1
+
+### Get one team 
+GET http://localhost:8080/teams/655413b6d15db7482da4a377 HTTP/1.1
+
+### Post a new team
+POST http://localhost:8080/teams HTTP/1.1
+Content-Type: application/json
+
+{
+    "teamName": "Team Nicole",
+    "teamGoals": "Complete the CSE341 final by December 14th.",
+    "teamTasks": "HTTP POST, Node.js project creation."
+}
+
+### Delete a team
+DELETE http://localhost:8080/teams/656219b15ff460c34a5c6c02 HTTP/1.1
+
+// +--------------------------------------------------------------------------------+
+// | Render!                                                                        |
+// +--------------------------------------------------------------------------------|
 
 # Get All Teams
 GET https://macawmanager.onrender.com/teams/ HTTP/1.1
 
 ### Get Team by Project ID
-GET https://macawmanager.onrender.com/teams/655e6a902ce7a017ecfdde82/ HTTP/1.1
+GET https://macawmanager.onrender.com/teams/655413b6d15db7482da4a377 HTTP/1.1
 
 ### Post New Team
 POST https://macawmanager.onrender.com/teams/ HTTP/1.1
 content-type: application/json
 
 {
-    "TeamName": "Team Nicole",
-    "TeamGoals": "Complete the CSE341 final by December 14th.",
-    "TeamTasks": "HTTP POST, Node.js project creation."
+    "teamName": "Team Nicole",
+    "teamGoals": "Complete the CSE341 final by December 14th.",
+    "teamTasks": "HTTP POST, Node.js project creation."
 }
 
 ### Delete Team

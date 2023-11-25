@@ -4,7 +4,7 @@
 // +--------------------------------------------------------------------------------+
 // | This module was programmed by Nicole Fluckiger, Jospeh Kaku, and Ryker Swensen |
 // +--------------------------------------------------------------------------------|
-// | File Version 1.0                                                               |
+// | File Version 1.1                                                               |
 // +--------------------------------------------------------------------------------+
 // | CODE DESCRIPTION                                                               |
 // | Router for teams.                                                              |
@@ -19,8 +19,8 @@ import teamsController from '../controllers/teams';
 
 const teamsRouter = express.Router();
     teamsRouter.get('/', teamsController.getAll);
-    teamsRouter.get('/:teams', teamsController.getTeam);
+    teamsRouter.get('/:id', teamsController.getTeam);
     teamsRouter.post('/', teamsController.createTeam);
-    teamsRouter.delete('/:teams', teamsController.deleteTeam);
+    teamsRouter.delete('/:id', teamsController.deleteTeam);
 
 export default teamsRouter;

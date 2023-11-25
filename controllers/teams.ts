@@ -4,7 +4,7 @@
 // +--------------------------------------------------------------------------------+
 // | This module was programmed by Nicole Fluckiger, Jospeh Kaku, and Ryker Swensen |
 // +--------------------------------------------------------------------------------|
-// | File Version 1.0                                                               |
+// | File Version 1.1                                                               |
 // +--------------------------------------------------------------------------------+
 // | CODE DESCRIPTION                                                               |
 // | Controller for teams.                                                          |
@@ -64,39 +64,30 @@ export const getAll = (req: Request, res: Response): void => {
 
 export const getTeam= (req: Request, res: Response): void => {
   try {
-    const teamName = new ObjectId(req.params.teamName);
+    const teamID = new ObjectId(req.params.id);
     
-    newTeams.find({ teamName })
-       .then((data: object) => {
-        
-        if(Object.keys(teamName).length==0){
-          console.log("No Team Found.");
-          res.status(404).send({ message: 'No Team Found.' });
-          return
-        }else{
-          console.log("Team Succesfully Found.");
-          res.status(200).send(data); console.log(data);
-          return
+    newTeams.findById( req.params.id )
+    .then((data: object) => {
+        res.status(200).send(data);
+        })
+        .catch((err: { message: object }) => {
+          res.status(500).send({
+            message: err.message || 'Some error occurred while retrieving the completed project.'
+          });
+        });
+    } catch (err) {
+      res.status(500).json(err);
     }
-  })
-  .catch((err: { message: object }) => {
-         res.status(500).send({
-           message: err.message || 'Error Finding Team.'
-         });
-       });
-   } catch (err) {
-     res.status(500).json(err);
-   }
- };
+  };
 
 export const deleteTeam = async (req: Request, res: Response): Promise<void> => {
   try {
-    const teamName = new ObjectId(req.params.teamName);
-    if (!teamName) {
+    const teamId = req.params.id;
+    if (!teamId) {
       res.status(400).json({ message: 'Invalid Team Name.' });
       return;
     }
-    const result = await newTeams.deleteOne({ teamName }).exec();
+    const result = await newTeams.findById( req.params.id ).deleteOne().exec();
     if (result.deletedCount === 0) {
       res.status(404).json({ message: 'No Team Found.' });
       return;
