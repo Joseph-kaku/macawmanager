@@ -15,12 +15,41 @@
 // \-------------------------------------------------------------------------------*/
 
 import express from 'express';
+import { Request, Response } from 'express';
 import teamsController from '../controllers/teams';
 
 const teamsRouter = express.Router();
-    teamsRouter.get('/', teamsController.getAll);
-    teamsRouter.get('/:id', teamsController.getTeam);
-    teamsRouter.post('/', teamsController.createTeam);
-    teamsRouter.delete('/:id', teamsController.deleteTeam);
+    teamsRouter.get('/', (req: Request, res: Response) => {
+
+/*
+#swagger.tags = ['Teams']
+*/
+    
+    teamsController.getAll(req, res);
+});
+    teamsRouter.get('/:id', (req: Request, res: Response) => {
+
+/*
+#swagger.tags = ['Teams']
+*/
+    
+    teamsController.getTeam(req, res);
+});
+    teamsRouter.post('/', (req: Request, res: Response) => {
+
+/*
+#swagger.tags = ['Teams']
+*/
+    
+    teamsController.createTeam(req, res);
+});
+    teamsRouter.delete('/:id', (req: Request, res: Response) => {
+
+/*
+#swagger.tags = ['Teams']
+*/
+    
+    teamsController.deleteTeam(req, res);
+});
 
 export default teamsRouter;
