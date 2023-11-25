@@ -1,5 +1,7 @@
 # macawmanager Overview:
-Our groups project is to create web service for a software as a service company. 
+Thank you for observing our project.
+This project was designed and created for the BYU-I Web-Services course.
+Four our project, we created a web service for a software as a service company named "Macaw Manager."
 This project will cover projects, completed projects, contacts, and teams. 
 
 ## Team Members:
@@ -14,6 +16,9 @@ This project will cover projects, completed projects, contacts, and teams.
 ## Render Links
 * [Main](https://macawmanager.onrender.com/api-docs/)
 * [BackUp](https://macawmanager-qsdf.onrender.com/api-docs/)
+
+## Local Host
+* [LocalHost](http://localhost:8080/api-docs/)
 
 ## Assignment YouTube Videos
 * [Week 10](https://youtu.be/yz0kog7zBck)
@@ -54,3 +59,5 @@ npm i mongodb
 npm i -D mongodb
 npm i mongoose
 ```
+
+### 
