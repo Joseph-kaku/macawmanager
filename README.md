@@ -2,6 +2,11 @@
 Our groups project is to create web service for a software as a service company. 
 This project will cover projects, completed projects, contacts, and teams. 
 
+## Team Members:
+* [Nicole Fluckiger](https://github.com/nfluckiger20)
+* [Joseph Kaku](https://github.com/Joseph-kaku)
+* [Ryker Swensen](https://github.com/RykerSwensen)
+
 ## GitHub Repositories:
 * [Main](https://github.com/Joseph-kaku/macawmanager)
 * [BackUp](https://github.com/RykerSwensen/macawmanager)
