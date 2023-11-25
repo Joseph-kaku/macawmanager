@@ -423,6 +423,114 @@
           }
         }
       }
-    }
-  }
-}
+    },
+          "/teams/": {
+            "get": {
+              "tags": [
+                "Teams"
+              ],
+              "description": "Get All Teams",
+              "responses": {
+                "200": {
+                  "description": "OK"
+                },
+                "500": {
+                  "description": "Internal Server Error"
+                }
+              }
+            },
+            "post": {
+              "tags": [
+                "Teams"
+              ],
+              "description": "Add a new Team",
+              "parameters": [
+                {
+                  "name": "body",
+                  "in": "body",
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      
+                        "teamName": {
+                            "example": "any"
+                        },
+                        "teamGoal": {
+                            "example": "any"
+                        },
+                        "teamTask": {
+                            "example": "any"
+                        }
+                    }
+                  }
+                }
+              ],
+              "responses": {
+                "201": {
+                  "description": "Created"
+                },
+                "500": {
+                  "description": "Internal Server Error"
+                }
+              }
+            }
+          },
+              "/teams/{teams}": {
+                "get": {
+                  "tags": [
+                    "Teams"
+                  ],
+                  "description": "Get A Single Team By ID",
+                  "parameters": [
+                    {
+                      "name": "teams",
+                      "in": "path",
+                      "required": true,
+                      "type": "string",
+                      "description": "Please Enter the Team ID"
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "OK"
+                    },
+                    "404": {
+                      "description": "Not Found"
+                    },
+                    "500": {
+                      "description": "Internal Server Error"
+                    }
+                  }
+                },
+                "delete": {
+                  "tags": [
+                    "Teams"
+                  ],
+                  "description": "Delete Team by ID",
+                  "parameters": [
+                    {
+                      "name": "teams",
+                      "in": "path",
+                      "required": true,
+                      "type": "string",
+                      "description": "Please Enter the Team ID"
+                    }
+                  ],
+                  "responses": {
+                    "200": {
+                      "description": "OK"
+                    },
+                    "400": {
+                      "description": "Bad Request"
+                    },
+                    "404": {
+                      "description": "Not Found"
+                    },
+                    "500": {
+                      "description": "Internal Server Error"
+                    }
+              }
+            }
+          }
+        }
+      }
