@@ -72,8 +72,45 @@ DELETE http://localhost:8080/projects/656226ae150ecfa5699bf480 HTTP/1.1
 // | Render!                                                                        |
 // +--------------------------------------------------------------------------------|
 
-###Get all projects
+### Get all projects
 GET https://macawmanager.onrender.com HTTP/1.1
 
-###Get one project
+### Get one project
 GET https://macawmanager.onrender.com/ HTTP/1.1
+
+### Post New Project
+GET https://macawmanager.onrender.com/projects HTTP/1.1
+Content-Type: application/json
+
+{
+    "projectName": "Web Application Development for Manga Site",
+    "company": "CrunchyNation",
+    "projectDescription": "Design and develop a user-friendly manga site with advanced features and functionalities.",
+    "technologies": [
+        "ReactJS",
+        "Node.js",
+        "MongoDB",
+        "Express.js"
+    ],
+    "projectStatus": "In Progress"
+}
+
+### Update Project
+GET https://macawmanager.onrender.com/656226ae150ecfa5699bf480 HTTP/1.1
+Content-Type: application/json
+
+{
+    "projectName": "Web Application Development for E-commerce Platform",
+    "company": "IntelliTech Solutions",
+    "projectDescription": "Design and develop a user-friendly e-commerce platform with advanced features and functionalities.",
+    "technologies": [
+    "ReactJS",
+    "Node.js",
+    "MongoDB",
+    "Express.js"
+    ],
+    "projectStatus": "In Progress"
+}
+
+### Delete a Project
+DELETE https://macawmanager.onrender.com/656226ae150ecfa5699bf480 HTTP/1.1
