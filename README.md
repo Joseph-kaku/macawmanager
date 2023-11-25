@@ -1,4 +1,30 @@
-# macawmanager
+# macawmanager Overview:
+Our groups project is to create web service for a software as a service company. 
+This project will cover projects, completed projects, contacts, and teams. 
+
+## GitHub Repositories:
+* [Main](https://github.com/Joseph-kaku/macawmanager)
+* [BackUp](https://github.com/RykerSwensen/macawmanager)
+
+## Render Links
+* [Main](https://macawmanager.onrender.com/api-docs/)
+* [BackUp](https://macawmanager-qsdf.onrender.com/api-docs/)
+
+## Assignment YouTube Videos
+* [Week 10](https://youtu.be/yz0kog7zBck)
+* [Week 11]()
+* [Week 12]()
+
+## Tools Used:
+* [TypeScript](https://www.typescriptlang.org/)
+* [Node.ts](https://nodejs.org/en/docs/?ref=hackernoon.com)
+* [ExpressTS](https://expressjs.com/?ref=hackernoon.com)
+* [Body-Parser](https://expressjs.com/en/resources/middleware/body-parser.html)
+* [Mongoose](https://mongoosejs.com/docs/typescript.html)
+* [Nodemon](https://nodemon.io/)
+* [Swagger](https://swagger.io/docs/)
+* [MongoDB](https://www.mongodb.com/docs/)
+* [Render](https://render.com/docs)
 
 ### Installs
 ```sh
