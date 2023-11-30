@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { ValidationChain, body, validationResult } from 'express-validator';
+import { ValidationChain, body, check, validationResult } from 'express-validator';
 
 const validate = {
     projectRules: (): ValidationChain[] => {
@@ -94,7 +94,83 @@ const validate = {
         next();
     },
 
-    
+    teamsRules: (): ValidationChain[] => {
+        return[
+            body('teamName')
+                .trim()
+                .isString()
+                .isLength({ min: 3 })
+                .withMessage('Team name must be a string.'),
+
+            body('teamGoal')
+                .trim()
+                .isString()
+                .isLength({ min: 3 })
+                .withMessage('Team goal must be a string.'),
+
+            body('teamTasks')
+                .trim()
+                .isString()
+                .isLength({ min: 3 })
+                .withMessage('Team tasks must be a string.'),
+        ]
+    },
+
+    checkTeamsData: (req: Request, res: Response, next: NextFunction): void => {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            res.status(400).json({ errors: errors.array() });
+            return;
+        }
+        next();
+    },
+
+    completedProjectsRules: (): ValidationChain[] => {
+        return [
+            body('projectName')
+                .trim()
+                .isString()
+                .isLength({ min: 3 })
+                .withMessage('Project name must be a string.'),
+            
+            body('projectDescription')
+                .trim()
+                .isString()
+                .isLength({ min: 3 })
+                .withMessage('Project description must be a string.'),
+                
+            body('technologies')
+                .isArray({ min: 1 })
+                .withMessage('Please provide at least one technology needed for the project.')
+                .custom((value: string[]) => {
+                    // Check if every element in the array is a string
+                    if (!value.every((element) => typeof element === 'string')) {
+                        throw new Error('Technologies must be an array of strings.');
+                    }
+                    return true;
+                }),
+            
+            body('completionDate')
+                .isDate()
+                .withMessage('Completion date must be a valid date.'),
+
+            body('projectManager')
+                .trim()
+                .isString()
+                .isLength({ min: 3 })
+                .withMessage('Project manager must be a string.'),
+        ]
+
+    },
+
+    checkCompletedProjectsData: (req: Request, res: Response, next: NextFunction): void => {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            res.status(400).json({ errors: errors.array() });
+            return;
+        }
+        next();
+    }
 }
 
 export default validate;
