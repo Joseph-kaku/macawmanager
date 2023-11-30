@@ -26,7 +26,7 @@
 GET http://localhost:8080/projects/ HTTP/1.1
 
 ### Get one project 
-GET http://localhost:8080/projects/655413a9d15db7482da4a370 HTTP/1.1
+GET http://localhost:8080/projects/65681f9a244b994d706998c8 HTTP/1.1
 
 ### Post new Project
 POST http://localhost:8080/projects HTTP/1.1
@@ -63,8 +63,8 @@ Content-Type: application/json
 }
 
 
-### Delete a project
-DELETE http://localhost:8080/projects/656226ae150ecfa5699bf480 HTTP/1.1
+### Delete a project  
+DELETE http://localhost:8080/projects/6562482d04d0c3933d897afe HTTP/1.1
 
 
 
