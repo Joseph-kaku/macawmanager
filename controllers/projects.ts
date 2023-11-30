@@ -47,7 +47,7 @@ export const createNew = (req: Request, res: Response): void => {
             projectStatus: req.body.projectStatus
         };
         
-        projects.save(newProjects).then((data: object) => {
+        projects.create(newProjects).then((data: object) => {
             console.log("Data Saved: ", data);
             res.status(201).send(data);
         })
