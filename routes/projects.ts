@@ -4,7 +4,7 @@
 // +--------------------------------------------------------------------------------+
 // | This module was programmed by Nicole Fluckiger, Jospeh Kaku, and Ryker Swensen |
 // +--------------------------------------------------------------------------------|
-// | File Version 1.0                                                               |
+// | File Version 1.1                                                               |
 // +--------------------------------------------------------------------------------+
 // | CODE DESCRIPTION                                                               |
 // | Router for the projects.                                                       |
@@ -31,7 +31,7 @@ const projectsControllerRouter = express.Router();
 projectsController.getAll(req, res);
 });
 
-    projectsControllerRouter.get('/:projects', (req: Request, res: Response) => {
+    projectsControllerRouter.get('/:id', (req: Request, res: Response) => {
 /*
 #swagger.tags = ['Projects']
 */
@@ -45,13 +45,13 @@ projectsController.getOneProject(req, res);
         projectsController.createNew(req, res);
     });
 
-    projectsControllerRouter.put('/:projects', (req:Request, res:Response) => {
+    projectsControllerRouter.put('/:id', (req:Request, res:Response) => {
 /*
 #swagger.tags = ['Projects']
 */
 projectsController.updateProject(req, res);
     } );
-    projectsControllerRouter.delete('/:projects', (req:Request, res:Response) => {
+    projectsControllerRouter.delete('/:id', (req:Request, res:Response) => {
 /*
 #swagger.tags = ['Projects']
 */

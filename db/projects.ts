@@ -25,7 +25,7 @@ interface Iprojects extends Document {
         type: string,
         required: [true, 'Project name is required.']},
     company: string;
-    projectionDescription: string;
+    projectDescription: string;
     technologies: [];
     projectStatus: string;
 }
@@ -34,7 +34,7 @@ const projectsSchema: Schema = new Schema({
     projectName: { type: String,
         required: [true, 'Project name is required.']},
         company: {type: String},
-        projectionDescription: {type: String},
+        projectDescription: {type: String},
         technologies: {type: Array},
         projectStatus: {type: String},
 });

@@ -19,10 +19,33 @@
 
 import express from 'express';
 import contactsController from '../controllers/contacts';
+import { Request, Response } from 'express';
 
 const contactsRouter = express.Router();
-    contactsRouter.get('/', contactsController.getAll);
-    contactsRouter.get('/:id', contactsController.getContact);
-    contactsRouter.post('/', contactsController.create);
+    contactsRouter.get('/', (req: Request, res: Response) => {
+
+/*
+#swagger.tags = ['Contacts']
+*/        
+
+        contactsController.getAll(req, res);
+    });
+
+    contactsRouter.get('/:id', (req: Request, res: Response) => {
+
+/*
+#swagger.tags = ['Contacts']
+*/
+    
+    contactsController.getContact(req, res);
+});
+
+    contactsRouter.post('/', (req: Request, res: Response) => {
+
+/*
+#swagger.tags = ['Contacts']
+*/ 
+    contactsController.create(req, res);
+});
 
 export default contactsRouter;

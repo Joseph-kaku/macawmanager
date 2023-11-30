@@ -19,12 +19,48 @@
 
 import express from 'express';
 import completedProjectsController from '../controllers/completedProjects';
+import { Request, Response } from 'express';
 
 const completedProjectsRouter = express.Router();
-    completedProjectsRouter.get('/', completedProjectsController.getAll);
-    completedProjectsRouter.get('/:id', completedProjectsController.getCompletedProject);
-    completedProjectsRouter.post('/', completedProjectsController.create);
-    completedProjectsRouter.put('/:id', completedProjectsController.updateCompletedProject);
-    completedProjectsRouter.delete('/:id', completedProjectsController.deleteCompletedProjects);
+    completedProjectsRouter.get('/', (req: Request, res: Response) => {
+
+/*
+#swagger.tags = ['Completed Projects']
+*/
+    
+    completedProjectsController.getAll(req, res);
+});
+    completedProjectsRouter.get('/:id', (req: Request, res: Response) => {
+
+/*
+#swagger.tags = ['Completed Projects']
+*/
+    
+    completedProjectsController.getCompletedProject(req, res);
+});
+    completedProjectsRouter.post('/', (req: Request, res: Response) => {
+
+/*
+#swagger.tags = ['Completed Projects']
+*/
+    
+    completedProjectsController.create(req, res);
+});
+    completedProjectsRouter.put('/:id', (req: Request, res: Response) => {
+
+/*
+#swagger.tags = ['Completed Projects']
+*/
+    
+    completedProjectsController.updateCompletedProject(req, res);
+});
+    completedProjectsRouter.delete('/:id', (req: Request, res: Response) => {
+
+/*
+#swagger.tags = ['Completed Projects']
+*/
+    
+    completedProjectsController.deleteCompletedProjects(req, res);
+});
 
 export default completedProjectsRouter;
