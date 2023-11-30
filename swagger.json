@@ -266,6 +266,18 @@
               "properties": {
                 "projectName": {
                   "example": "any"
+                },
+                "company": {
+                  "example": "any"
+                },
+                "projectDescription": {
+                  "example": "any"
+                },
+                "technologies": {
+                  "example": "any"
+                },
+                "projectStatus": {
+                  "example": "any"
                 }
               }
             }

@@ -39,11 +39,15 @@ export const getAll = (req: Request, res: Response): void => {
 
 export const createNew = (req: Request, res: Response): void => {
     try {
-        const { projectName } = req.body;
-
-        const newProjects = new projects(req.body);
-
-        newProjects.save().then((data: object) => {
+        const newProjects = {
+            projectName: req.body.projectName,
+            company: req.body.company,
+            projectDescription: req.body.projectDescription,
+            technologies: req.body.technologies,
+            projectStatus: req.body.projectStatus
+        };
+        
+        projects.save(newProjects)((data: object) => {
             console.log("Data Saved: ", data);
             res.status(201).send(data);
         })
@@ -67,14 +71,14 @@ export const getOneProject = (req: Request, res: Response): void => {
             res.status(200).send(data);
             })
             .catch((err: { message: object }) => {
-              res.status(500).send({
+            res.status(500).send({
                 message: err.message || 'Some error occurred while retrieving the single project.'
-              });
+            });
             });
         } catch (err) {
-          res.status(500).json(err);
+        res.status(500).json(err);
         }
-      };
+    };
 
 export const updateProject = async (req: Request, res: Response) => {
 
