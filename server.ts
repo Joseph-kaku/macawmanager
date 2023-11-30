@@ -118,7 +118,3 @@ app.get('/', (req: Request, res: Response) => {
 app.get('/contacts', requiresAuth(), (req: Request, res: Response) => {
   res.send(JSON.stringify(req.oidc.user));
 });
- 
-app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
-});
