@@ -21,7 +21,7 @@ interface incompleteTeams extends Document {
   teamName: { 
     type: string,
     required: [true, 'Team Name Required.']},
-  teamGoal: string;
+  teamGoals: string;
   teamTasks: string;
 }
 
@@ -29,7 +29,7 @@ interface incompleteTeams extends Document {
 const teamsSchema: Schema = new Schema({
     teamName: { type: String,
     required: [true, 'Team Name Required.'] },
-    teamGoal: { type: String },
+    teamGoals: { type: String },
     teamTasks: { type: String },
 });
 

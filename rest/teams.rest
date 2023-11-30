@@ -33,7 +33,7 @@ POST http://localhost:8080/teams HTTP/1.1
 Content-Type: application/json
 
 {
-    "teamName": "Team Nicole",
+    "teamName": "Team Test",
     "teamGoals": "Complete the CSE341 final by December 14th.",
     "teamTasks": "HTTP POST, Node.js project creation."
 }

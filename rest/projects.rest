@@ -33,9 +33,9 @@ POST http://localhost:8080/projects HTTP/1.1
 Content-Type: application/json
 
 {
-    "projectName": "Web Application Development for Manga Site",
+    "projectName": "Web Application Development for Anime Site",
     "company": "CrunchyNation",
-    "projectDescription": "Design and develop a user-friendly manga site with advanced features and functionalities.",
+    "projectDescription": "Design and develop a user-friendly anime site with advanced features and functionalities.",
     "technologies": [
         "ReactJS",
         "Node.js",
