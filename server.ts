@@ -84,10 +84,10 @@ const app = express();
 const config = {
   authRequired: false,
   auth0Logout: true,
-  secret: process.env.SECRET as string,
-  baseURL: process.env.BASE_URL as string,
-  clientID: process.env.CLIENT_ID as string,
-  issuerBaseURL: process.env.ISSUER_BASE_URL as string,
+  secret: 'a long, randomly-generated string stored in env',
+  baseURL: 'http://localhost:8080',
+  clientID: 'tsS7rm0pRY2SejsKP3aNSmEW7zEExYw8',
+  issuerBaseURL: 'https://dev-2of2wzj2x83rpvs7.us.auth0.com'
 };
  
 app
@@ -118,3 +118,5 @@ app.get('/', (req: Request, res: Response) => {
 app.get('/contacts', requiresAuth(), (req: Request, res: Response) => {
   res.send(JSON.stringify(req.oidc.user));
 });
+
+module.exports = app
