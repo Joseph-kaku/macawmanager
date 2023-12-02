@@ -23,13 +23,14 @@ import completedProjectsRouter from './completedProjects';
 import contactsRouter from './contacts';
 import projects from './projects';
 import teamsRouter from './teams';
+import validate from '../db/validate';
 
 const baseRouter = express.Router();
 
 baseRouter.use('/', s);
-baseRouter.use('/completedprojects',completedProjectsRouter ); 
-baseRouter.use('/contacts', contactsRouter);
-baseRouter.use('/projects', projects);
-baseRouter.use('/teams', teamsRouter)
+baseRouter.use('/completedprojects', validate ,completedProjectsRouter ); 
+baseRouter.use('/contacts', validate , contactsRouter);
+baseRouter.use('/projects', validate , projects);
+baseRouter.use('/teams', validate , teamsRouter)
 
 export default baseRouter;
