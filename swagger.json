@@ -48,7 +48,19 @@
             "schema": {
               "type": "object",
               "properties": {
-                "projectName": {
+                "username": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                },
+                "displayName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "joinDate": {
                   "example": "any"
                 }
               }
@@ -196,9 +208,21 @@
             "schema": {
               "type": "object",
               "properties": {
-                "name": {
+                "title": {
                   "example": "any"
-                }
+              },
+              "email": {
+                  "example": "any"
+              },
+              "phone": {
+                  "example": "any"
+              },
+              "department": {
+                  "example": "any"
+              },
+              "projects": {
+                "example": "any"
+            }
               }
             }
           }
@@ -426,7 +450,13 @@
               "properties": {
                 "teamName": {
                   "example": "any"
-                }
+              },
+              "teamGoal": {
+                  "example": "any"
+              },
+              "teamTask": {
+                  "example": "any"
+              }
               }
             }
           }
