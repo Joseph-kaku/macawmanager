@@ -101,11 +101,6 @@ app
 import db from './db';
 db.mongoose.connect(db.url, {
 })
-.then(() => {
-  app.listen(port, () => {
-    console.log(`DB Connected and server running on ${port}.`);
-  });
-})
 .catch((err: Error) => { 
   console.log('Cannot connect to the database!', err);
   process.exit();
@@ -120,3 +115,7 @@ app.get('/contacts', requiresAuth(), (req: Request, res: Response) => {
 });
 
 module.exports = app
+
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
+});

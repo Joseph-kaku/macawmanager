@@ -21,9 +21,12 @@ import { Request, Response } from  'express';
 import db from '../db';
 import { ObjectId } from 'mongodb';
 const projects = db.projects;
+import * as usernameValidator from '../db/passValidator'
 
 export const getAll = (req: Request, res: Response): void => {
     try{
+        
+
         projects.find({}).then((data: object) => {
             res.status(200).send(data);
         })
@@ -39,6 +42,22 @@ export const getAll = (req: Request, res: Response): void => {
 
 export const createNew = (req: Request, res: Response): void => {
     try {
+
+        const { projectName } = req.body;
+
+        // Error checking for empty fields
+        if (!projectName) {
+        res.status(400).send({message: 'Project Name Cannot Be Empty'});
+        return;
+      }
+  
+      const usernameValid = usernameValidator.passwordPass(projectName);
+  
+      if (usernameValid.error) {
+        res.status(400).send({message: usernameValid.error});
+        return;
+      }
+
         const newProjects = {
             projectName: req.body.projectName,
             company: req.body.company,

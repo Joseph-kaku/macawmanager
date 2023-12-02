@@ -21,12 +21,25 @@ import { Request, Response } from 'express';
 import db from '../db';
 import { ObjectId } from 'mongodb';
 const Contacts = db.contacts;
+import * as usernameValidator from '../db/passValidator'
 
 export const create = (req: Request, res: Response): void => {
 
   try {
     const { name } = req.body;
 
+    // Error checking for empty fields
+    if (!name) {
+      res.status(400).send({message: 'Name Cannot Be Empty'});
+      return;
+    }
+
+    const usernameValid = usernameValidator.passwordPass(name);
+
+    if (usernameValid.error) {
+      res.status(400).send({message: usernameValid.error});
+      return;
+    }
     const contacts = new Contacts(req.body);
 
     contacts.save()

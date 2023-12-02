@@ -17,6 +17,7 @@
 import { Request, Response } from 'express';
 import db from '../db';
 import { ObjectId } from 'mongodb';
+import * as usernameValidator from '../db/passValidator'
 
 const newTeams = db.teams;
 
@@ -24,6 +25,18 @@ export const createTeam = (req: Request, res: Response): void => {
 
   try {
     const { teamName } = req.body;
+
+    // Error checking for empty fields
+    if (!teamName) {
+      res.status(400).send({message: 'Team Name Cannot Be Empty'});
+      return;
+    }
+    const usernameValid = usernameValidator.passwordPass(teamName);
+    if (usernameValid.error) {
+      res.status(400).send({message: usernameValid.error});
+      return;
+    }
+
 
     const teams = new newTeams(req.body);
 

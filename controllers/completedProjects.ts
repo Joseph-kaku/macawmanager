@@ -21,6 +21,7 @@ import { Request, Response } from 'express';
 import db from '../db';
 import { ObjectId } from 'mongodb';
 const CompletedProjects = db.completedProjects;
+import * as usernameValidator from '../db/passValidator'
 
 const isError = (error: unknown): error is Error => {
   return error instanceof Error;
@@ -30,6 +31,19 @@ export const create = (req: Request, res: Response): void => {
 
   try {
     const { projectName } = req.body;
+
+    // Error checking for empty fields
+    if (!projectName) {
+      res.status(400).send({message: 'Project Name Cannot Be Empty'});
+      return;
+    }
+
+    const usernameValid = usernameValidator.passwordPass(projectName);
+
+    if (usernameValid.error) {
+      res.status(400).send({message: usernameValid.error});
+      return;
+    }
 
     const completedProjects = new CompletedProjects(req.body);
 
