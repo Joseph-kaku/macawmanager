@@ -26,14 +26,14 @@
 GET http://localhost:8080/projects/ HTTP/1.1
 
 ### Get one project 
-GET http://localhost:8080/projects/ HTTP/1.1
+GET http://localhost:8080/projects/655413a9d15db7482da4a370 HTTP/1.1
 
 ### Post new Project
 POST http://localhost:8080/projects HTTP/1.1
 Content-Type: application/json
 
 {
-    "projectName": "Web Application Development for Anime Site",
+    "projectName": "Web Application Development for Anime Site Final Presentation",
     "company": "CrunchyNation",
     "projectDescription": "Design and develop a user-friendly anime site with advanced features and functionalities.",
     "technologies": [
@@ -46,7 +46,7 @@ Content-Type: application/json
 }
 
 ### Update a project's information
-PUT http://localhost:8080/projects/656bcc7654f7970d3cf5a266 HTTP/1.1
+PUT http://localhost:8080/projects/656bd9574f8036da51f01d1c HTTP/1.1
 Content-Type: application/json
 
 {
@@ -64,7 +64,7 @@ Content-Type: application/json
 
 
 ### Delete a project  
-DELETE http://localhost:8080/projects/656bcc7654f7970d3cf5a266 HTTP/1.1
+DELETE http://localhost:8080/projects/656bd9574f8036da51f01d1c HTTP/1.1
 
 
 

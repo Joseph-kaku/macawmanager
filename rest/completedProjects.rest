@@ -45,7 +45,7 @@ content-type: application/json
 }
 
 ### Put Completed Project
-PUT http://localhost:8080/completedprojects/656bcbab54f7970d3cf5a258 HTTP/1.1   
+PUT http://localhost:8080/completedprojects/656bd8964f8036da51f01d10 HTTP/1.1   
 content-type: application/json
 
 {
@@ -62,7 +62,7 @@ content-type: application/json
 }
 
 ### Delete Completed Project
-DELETE http://localhost:8080/completedprojects/656bcbab54f7970d3cf5a258 HTTP/1.1
+DELETE http://localhost:8080/completedprojects/656bd8964f8036da51f01d10 HTTP/1.1
 
 
 // +--------------------------------------------------------------------------------+
