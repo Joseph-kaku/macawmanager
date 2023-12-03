@@ -32,7 +32,7 @@ POST http://localhost:8080/completedprojects HTTP/1.1
 content-type: application/json
 
 {
-    "projectName": "Web Application Development for Wendy's Fast Food Chain",
+    "projectName": "Web Application for final presentation",
     "projectDescription": "Design and develop a user-friendly e-commerce platform with advanced features and functionalities.",
     "technologies": [
         "C++",
@@ -45,11 +45,11 @@ content-type: application/json
 }
 
 ### Put Completed Project
-PUT http://localhost:8080/completedprojects/655d65ec9539d3b5ba1e5905 HTTP/1.1   
+PUT http://localhost:8080/completedprojects/656bcbab54f7970d3cf5a258 HTTP/1.1   
 content-type: application/json
 
 {
-    "projectName": "Web Application Development for Educators",
+    "projectName": "Updated Web Application for final presentation",
     "projectDescription": "Design and develop a user-friendly e-commerce platform with advanced features and functionalities.",
     "technologies": [
         "C++",
@@ -62,7 +62,7 @@ content-type: application/json
 }
 
 ### Delete Completed Project
-DELETE http://localhost:8080/completedprojects/655d65ec9539d3b5ba1e5905 HTTP/1.1
+DELETE http://localhost:8080/completedprojects/656bcbab54f7970d3cf5a258 HTTP/1.1
 
 
 // +--------------------------------------------------------------------------------+

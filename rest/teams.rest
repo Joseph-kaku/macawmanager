@@ -39,7 +39,7 @@ Content-Type: application/json
 }
 
 ### Delete a team
-DELETE http://localhost:8080/teams/656219b15ff460c34a5c6c02 HTTP/1.1
+DELETE http://localhost:8080/teams/656bccda54f7970d3cf5a26d HTTP/1.1
 
 // +--------------------------------------------------------------------------------+
 // | Render!                                                                        |

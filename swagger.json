@@ -48,19 +48,19 @@
             "schema": {
               "type": "object",
               "properties": {
-                "username": {
+                "projectName": {
                   "example": "any"
                 },
-                "password": {
+                "projectDescription": {
                   "example": "any"
                 },
-                "displayName": {
+                "technologies": {
                   "example": "any"
                 },
-                "email": {
+                "completionDate": {
                   "example": "any"
                 },
-                "joinDate": {
+                "projectManager": {
                   "example": "any"
                 }
               }
@@ -208,6 +208,9 @@
             "schema": {
               "type": "object",
               "properties": {
+                "name": {
+                  "example": "any"
+                },
                 "title": {
                   "example": "any"
               },
