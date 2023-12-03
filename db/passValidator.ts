@@ -1,8 +1,8 @@
 import JoiPasswordComplexity from 'joi-password-complexity';
 
 const complexityOptions = {
-  min: 8,
-  max: 10,
+  min: 1,
+  max: 100,
   lowerCase: 1,
   upperCase: 1
 };
