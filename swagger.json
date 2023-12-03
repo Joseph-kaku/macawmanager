@@ -5,7 +5,7 @@
     "description": "",
     "version": "1.0.0"
   },
-  "host": "macawmanager.onrender.com",
+  "host": "macawmanager-qsdf.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"

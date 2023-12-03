@@ -32,7 +32,7 @@ POST http://localhost:8080/contacts HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Ryker Swensen",
+    "name": "Ryker Swensen for final presentation",
     "title": "CO-Founder",
     "email": "swe18003@byui.edu",
     "phone": "+1-212-555-1111",
